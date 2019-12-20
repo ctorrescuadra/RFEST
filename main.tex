@@ -88,7 +88,9 @@ The \emph{exergy cost} (kWh), \cite{Valero1986a} (i.e. \emph{cumulative exergy c
 
 The process of costs allocation in manufacturing systems requires a set of rules for the case of bifurcated streams \cite{Lozano1993,Tsatsaronis2007}. The most important rules are as follow: 
 
-\emph{Rule P}: the costs per unit of exergy of the co-products are equal; “co-products” means two or more products with the same quality produced in the component. \emph{Rule F}: the costs per unit of exergy of non-exhausted and entering resources are equal.
+\emph{Rule P:} the costs per unit of exergy of the co-products are equal; “co-products” means two or more products with the same quality produced in the component. 
+
+\emph{Rule F}: the costs per unit of exergy of non-exhausted and entering resources are equal.
 \begin{center}
   \begin{minipage}[c]{0.50\linewidth}
     \includegraphics{reglaP.pdf}
@@ -157,7 +159,6 @@ it satisfies evidently the following expresion for each and every component:
 \dpartial{0}{j}=\sum_{i\in\mathcal{E}_u}{\dpartial{0}{i}\,\dpartial{i}{j}}
 \label{eq:mcost}
 \end{equation}
-
 Note that in case of the flows entering the plant, it leads:
 \begin{equation}
 k_{j}^{*}=1 \qquad j\in\mathcal{S}_0
@@ -185,7 +186,7 @@ and
 \end{equation}
 Herein, this expression is called the \emph{component's characteristic equation}.
 
-Therefore, \cref{eq:mcost} could be expressed as follow: 
+Therefore, the marginal cost relationship \cref{eq:mcost} could be expressed as follow: 
 \begin{equation}
     k_{j}^{*}=\sum_{i\in\mathcal{E}_u}{k_{ij}\,k_{i}^{*}}
     \label{eq:kchar}
@@ -454,13 +455,9 @@ One important result of the structural theory is that any energy function of the
 
 Mythologizing exergy is not convenient, it only measures the number of times that a product is potentially equivalent to another. Therefore, the kilograms of natural gas; mass of steam at a certain temperature and pressure; and kinetic, magnetic, or mechanical energies are possible units for measuring exergy. Certainly, it does not reflect the product value. A broken glass has practically the same exergy as a new one, and the chemical exergy of gold is zero. Moreover, everybody would prefer 1 g diamond than 1 g pure graphite, even though they practically have the same exergy.
 
-In addition, the manufacture of a continuous and broken thread costs the same exergy although the latter would not be saleable.
+In addition, the manufacture of a continuous and broken thread costs the same exergy although the latter would not be saleable. Exergy reduces a probably irreducible object to a single numerical value. The color, taste, form, texture, or artistic impression (i.e., properties that human beings value) have no distinguishable exergy. The exergy and exergy cost are only a measure of reality, which should not supplant other possible analyses.
 
-Exergy reduces a probably irreducible object to a single numerical value. The color, taste, form, texture, or artistic impression (i.e., properties that human beings value) have no distinguishable exergy. The exergy and exergy cost are only a measure of reality, which should not supplant other possible analyses.
-
-Can the concept of value be assessed by thermodynamics? Does it make sense to go beyond the exergy cost when it comes to knowing the cost of objects? 
-
-It has been claimed many times that exergy is a measure of the quality of things, which is false; it is a measure of the energy imbalance that a system has with respect to a reference environment. It is a measure of the thermodynamic quality of energy and not of objects. Moreover, the quality specification is much more complex. A dose of carbon monoxide may have the same exergy as a certain amount of food; however, everybody knows which one to ingest or burn in a boiler. The same food can present a disgusting or an extraordinary aspect and contain the same amount of exergy. Based on the many possible examples, it seems strange to confuse exergy with quality.
+Can the concept of value be assessed by thermodynamics? Does it make sense to go beyond the exergy cost when it comes to knowing the cost of objects? It has been claimed many times that exergy is a measure of the quality of things, which is false; it is a measure of the energy imbalance that a system has with respect to a reference environment. It is a measure of the thermodynamic quality of energy and not of objects. Moreover, the quality specification is much more complex. A dose of carbon monoxide may have the same exergy as a certain amount of food; however, everybody knows which one to ingest or burn in a boiler. The same food can present a disgusting or an extraordinary aspect and contain the same amount of exergy. Based on the many possible examples, it seems strange to confuse exergy with quality.
 
 Assessing quality requires many specifications such as the pressure, temperature, composition, height, and speed. Quality also depends on the context, whereas exergy does not. In general, thermodynamic equivalence is not a measure of the equivalence of values. Even circumstances and the moment make a thing seem more or less valuable. Researchers should distance themselves from neo-energeticism (or even better “exergeticism”), which regards exergy rather as a measure of the value of objects than as their monetary value. The exergy and exergy costs provide complementary information on the human footprint on Earth; ignoring them is as dangerous as extolling them as a unique instrument for managing the natural resources and environment.
  
@@ -474,6 +471,7 @@ identifies product, waste, and what is (or is not) a usable resource. Certainly,
     I = T_0\,S_g
 \label{eq:gouystodola}
 \end{equation}
+
 Regardless of the way the quality of every flow, product, or service is defined (generalized exergy function), it is easier to identify the quantity. Thus, the magnitude of a property $X$ is always a product of its quantity $q_x$ multiplied by its specific quality $x$:
 \begin{equation}
 X=q_x\cdot x
@@ -502,18 +500,16 @@ S_g=&\,m\left(s_2-s_1\right)
 \end{align}
 If the turbine degrades, at a rate equal to the specifications of the inflow \#1, an increase in the entropy generation evidently results in an increase in the amount of entering fuel (path 1) to keep the production constant. Owing to the degradation, the new state of the outflow \#2' is characterized by  ($h_{2'}$, $s_{2'}$).
 
-If the turbine degrades, at equal to the specifications of the inflow, \#1, it is evident that an increase in the entropy generation will result in an increase in the amount of entering fuel, \#1, to keep production constant. Suppose that because of such degradation the new state of the outflow is \#2' characterized by ($h_{2'}$, $s_{2'}$). 
-
 A differential analysis under the conditions: $W$=const., $h_1$=const., and $s_1$=const., leads to the following expressions:
 \begin{align}
-\left(h_1-h_2\right) dm &= m\, dh_2\\
-\left(s_1-s_2\right) dm + m\,ds_2 &= dS_g
+\left(h_1-h_2\right) dm &= m \, dh_2\\
+\left(s_1-s_2\right) dm + m \, ds_2 &= dS_g
 \end{align}
 Subsequently, the deterioration temperature of flow \#2 is defined as a quotient:
 \[
 T_{d_2}\equiv dh_2/ds_2
 \]
-The results are as follows:
+and the result is as follows:
 \begin{equation}
 \left(\frac{dm}{dS_g}\right)_r =\frac{T_{d_2}}{\left(h_1-h_2\right)-T_{d_2}\,\left(s_1-s_2\right)},
 \label{eq:dt2}
@@ -522,8 +518,7 @@ where $r$ is the deterioration path, as it shown is \cref{fig:dt1}.
 
 \Cref{eq:dt2} is the mathematical expression of the existing relationship between any local degradation and the increase in associated resources if the production of the component should remain constant.
 
-These equations was presented first in [12] and the function    
-$\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were presented in \cite{Valero1992b} . Valero called it the “relative free energy”, and $T_d$ the “deterioration temperature” \cite{Royo1994,Royo1995}. The expression “relative free energy” originates from its similarity to the Gibbs free energy function. \Cref{eq:dt2} states that any deterioration process in an energy component has an associated $T_d$. This parameter possesses temperature dimensions even if it is not a measurable temperature; it can be calculated by measuring the quotient $dh_2/ds_2$ experienced by the output flow of the component.
+These equations and the function $\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were presented in \cite{Valero1992b}. Valero called it the \emph{relative free energy}, and $T_d$ the \emph{deterioration temperature} \cite{Royo1994,Royo1995}. The expression “relative free energy” originates from its similarity to the Gibbs free energy function. \Cref{eq:dt2} states that any deterioration process in an energy component has an associated $T_d$. This parameter possesses temperature dimensions even if it is not a measurable temperature; it can be calculated by measuring the quotient $dh_2/ds_2$ experienced by the output flow of the component.
 
 The heat exchanger \cref{fig:dt2} experiences the same procedure  
 \begin{center}
@@ -538,7 +533,7 @@ The heat exchanger \cref{fig:dt2} experiences the same procedure
 	\captionof{figure}{Degradation path and deterioration temperature of heat source in heat exchanger}
 	\label{fig:dt2}
 \end{center}
-In that case: 
+In that case, the enthalpy and entropy balances are written as follows: 
 \begin{align}
 m_1 \left(h_1 - h_2 \right) - m_3 \left(h_4 -h_3\right) &= 0 \\
 m_1 \left(s_1 - s_2 \right) - m_3 \left(s_4 - s_3 \right) &= S_g 
@@ -555,11 +550,11 @@ The dissipation temperature of flow \#2 is defined as a quotient:
 \[
 	T_{d_2}\equiv -\frac{dh_2}/{ds_2}>0
 \]
-Subsequentely \cref{eq:dt2} is also satisfied.
+Subsequently \cref{eq:dt2} is also satisfied.
 
 According to the second law, $dS_g$ is always positive; therefore, more fuel must be used to obtain the same product, and $dm > 0$. Because $T_{d,2}$ is positive, the term $(h_2-h_1 )-T_(d_2 ) (s_2-s_1 )$ must be positive; in other words, $T_{d,2} (s_1-s_2)$ is always greater than $(h_1-h_2)$.
 
-\section{ h-s Deterioration(s) Path(s) of an Energy System}
+\section{h-s Deterioration(s) Path(s) of an Energy System}
 Man-made energy systems transform the energy flows one into another flows with a purpose. Commonly, the name of a component describes its function: a boiler boils water, a condenser condenses, and a heat exchanger exchanges heat. The understanding of how nature behaves is the basis of the component design. The entering flow performs a purposive path through which its thermodynamic properties change progressively until the flow exits the component. This path is never strictly determined, either because of possible changes in the quantity/quality of the entering flow or because of changes in the behavior of the component itself. This path variation results in a change in the properties of the exiting flow with respect to its design conditions. There are as many new exit states as causes of change, which are called “malfunctions” and are classified into two categories: intrinsic and induced \cite{Valero2004c,Valero1999c,Torres1999}. The term “intrinsic” refers to the internal deterioration of the component; the term “induced” refers to its off-design conditions (not the optimal operating conditions). A good component design foresees most of these off-design conditions. Literature and some manufacturers provide governing equations and control parameters based on semi-empirical models of the machines.
 
 For a given deterioration cause $r$ of an energy component, either intrinsic or induced, a geometric path in the $h-s$ plane of the possible exit flow states can be identified. Let $h_{2'}=h_{2'}(s_{2'}, r)$ to be the function describing this dissipation path of the exiting flow, as in \cref{fig:dt1}, where:
@@ -571,7 +566,7 @@ For a given deterioration cause $r$ of an energy component, either intrinsic or 
 The function $h_{2'}=h_{2'} (s_{2'}, r)$ ) can be regarded as the mathematical description of the effects on the exiting flow caused by the component deterioration cause $r$. This function always exists for a given differential malfunction interval. Moreover, under actual machine conditions, this function is a composite curve of the different paths caused by the concurrent deteriorations acting simultaneously on the component \cite{Valero2004c}. The next section focuses on this function.
 
 \section{The Legendre transform of a deterioration path}
-For each deterioration cause, $r$, the existence of a function $h = h(s)$ of the exiting flow can be assumed, which can be described in the $h-s$ plane with the conventional point geometry or Plücker line geometry for strictly convex functions as a convolution of the tangents of the original curve. This technique is named the “Legendre transform“ of the function $h = h(s)$ and is widely used in classical thermodynamics \cite{Callen1985,Alberty2001}.
+For each deterioration cause, $r$, the existence of a function $h = h(s)$ of the exiting flow can be assumed, which can be described in the $h-s$ plane with the conventional point geometry or Plücker line geometry for strictly convex functions as a convolution of the tangents of the original curve. This technique is named the \emph{Legendre transform} of the function $h = h(s)$ and is widely used in classical thermodynamics \cite{Callen1985,Alberty2001}.
 
 \begin{figure}[ht]
 	\centering
@@ -580,7 +575,7 @@ For each deterioration cause, $r$, the existence of a function $h = h(s)$ of the
 	\label{fig:rfe}
 \end{figure}
 
-\Cref{fig:rfe} shows that the intercept on the \emph{h-axis} of the tangent line is $\ell$ with slope $T_d$:
+\Cref{fig:rfe} shows that the intercept on the $h-axis$ of the tangent line is $\ell$ with slope $T_d$:
 \[
 T_d=\frac{h-\ell}{s}
 \]
@@ -633,12 +628,12 @@ Combining it with \cref{eq:dt2}, results in the following equations:
 \left(\frac{dm}{dS_g}\right)_r = \frac{T_0}{ex_2'-ex_2}=\frac{T_{d,2}}{\ell_1-\ell_2}
 \label{eq:dmsg}
 \end{equation}
-Consequently, function l becomes more familiar. \Cref{eq:dmsg} presents the relationship between the increase in the entropy generation in a process in which a stream performs an activity; the amount of required additional resources depends on the following specifications: 
+Consequently, function $\ell$ becomes more familiar. \Cref{eq:dmsg} presents the relationship between the increase in the entropy generation in a process in which a stream performs an activity; the amount of required additional resources depends on the following specifications: 
 \begin{itemize}
 	\item Constant quality of the entering resource, and
 	\item Constant quality and quantity of the production,
 \end{itemize}
-Therefore, \cref{eq:dmsg} bacomes as follows:
+Therefore, \cref{eq:dmsg} becomes as follows:
 \begin{equation}
 \left(\frac{dm_{in}}{dS_g}\right)_r = \frac{T_{d,2}}{\ell_1-\ell_2}
 \end{equation}
@@ -661,14 +656,15 @@ and knows how the global system's resources is related with local resources, i.e
 \[
 \left(\frac{\partial m_{global}}{\partial m_{local}}\right)_r
 \]
-one may have a new theory of energy system diagnosis. We will present this theory with due examples in a following paper, however, an early analysis was published in [16].
+one may have a new theory of energy system diagnosis. We will present this theory with due examples in a following paper, however, an early analysis was published in \cite{Royo1997}.
 
 \section{Conclusions}
-The definition of efficiency plays a fundamental role in the process of calculating average exergy costs. So efficiency and cost became closely linked. In such a way the \emph{Theory of Exergy Cost} [1,4] was extensively used to assess costs on many thermoeconomic/thermodynamic applications. However, the exergy cost depends on the plant disaggregation scheme. It is necessary to look after “the cost formation process”, by searching how much exergy has been consumed in the processes and where they have consumed it. The result of this activity is a given productive structure. However, if exergy depends on a chosen reference state, exergy efficiencies and their closely related costs will depend on such selection. Notwithstanding, any deterioration that increases entropy generation results in an additional expense of resources used to produce the same product. Both, the entropy increase and the additional resources are measurable and free from analyst selections. Therefore, something fails in the conventional theory.
+The definition of efficiency plays a fundamental role in the process of calculating average exergy costs. So efficiency and cost became closely linked. In such a way the \emph{Theory of Exergy Cost} \cite{Valero1986a,Lozano1993} was extensively used to assess costs on many thermoeconomic/thermodynamic applications. However, the exergy cost depends on the plant disaggregation scheme. It is necessary to look after “the cost formation process”, by searching how much exergy has been consumed in the processes and where they have consumed it. The result of this activity is a given productive structure. However, if exergy depends on a chosen reference state, exergy efficiencies and their closely related costs will depend on such selection. Notwithstanding, any deterioration that increases entropy generation results in an additional expense of resources used to produce the same product. Both, the entropy increase and the additional resources are measurable and free from analyst selections. Therefore, something fails in the conventional theory. 
+
 The use of exergy instead of enthalpy or the Gibbs function for obtaining costs increase the overall, coherent and systematic view of a set of stream costs in a productive structure. To what extent one could use these costs to assess component malfunctions? In other words, can average costs be used as marginal costs?
 
 The exergy cost is the “exergy backpack”, “embodied exergy” or the “exergy footprint” of a commodity; in fact, Szargut named it as “cumulative exergy consumption” i.e. its “past” characterization (history), while exergy is the potential energy of such a commodity, or its remaining capacity for doing something. Can average costs predict future degradations or only past irreversibilities? 
-The purpose of Thermoeconomics is to obtain a coherent and significant set of costs in a given structure. That is because its applications are directed towards the optimization and diagnosis of productive structures. Therefore, the costs of internal streams are quite important to analyze the behavior of the system. Consequently, internal costs ought to be as sensitive as possible to system degradations. A theory that would provide exact costs would be the objective of thermoeconomic diagnosis. In fact, one can obtain the costs of final products –commodities-, without performing very detailed analyses. In other words, in no way Thermoeconomics, as it is already known, is far from being finished. Moreover, the analyst needs to look for the “process of formation of cost of wastes” not mentioned here even when some ideas developed here could be used to clarify it.
+The purpose of Thermoeconomics is to obtain a coherent and significant set of costs in a given structure. That is because its applications are directed towards the optimization and diagnosis of productive structures. Therefore, the costs of internal streams are quite important to analyze the behavior of the system. Consequently, internal costs ought to be as sensitive as possible to system degradations. A theory that would provide exact costs would be the objective of thermoeconomic diagnosis. In fact, one can obtain the costs of final products, without performing very detailed analyses. In other words, in no way Thermoeconomics, as it is already known, is far from being finished. Moreover, the analyst needs to look for the “process of formation of cost of wastes” not mentioned here even when some ideas developed here could be used to clarify it.
 
 This paper presents a General Theory of (linear) Costing, demonstrating and answering questions like:
 \begin{itemize}
