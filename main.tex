@@ -2,7 +2,7 @@
 %  In case you need support, please attach all files that are necessary for compiling as well as the log file, and specify the details of your LaTeX setup (which operating system and LaTeX version / tools you are using).
 
 %=================================================================
-\documentclass[energies,article,accept,moreauthors,pdftex]{Definitions/mdpi} 
+\documentclass[energies,article,submit,moreauthors,pdftex]{Definitions/mdpi} 
 
 % If you would like to post an early version of this manuscript as a preprint, you may use preprint as the journal and change 'submit' to 'accept'. The document class line would be, e.g., \documentclass[preprints,article,accept,moreauthors,pdftex]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
 
@@ -40,7 +40,7 @@
 \DeclareMathOperator{\Lgdr}{\mathcal{L}}
 \newcommand{\vm}[1]{\ensuremath{\mathbf{#1}}}
 \newcommand{\tm}{\ensuremath{\prescript{\smash{\mathsf{t}}}{}{\mskip1mu}}}
-\newcommand{\dpartial}[2]{\left(\frac{\partial E_{#1}}{\partial E_{#2}}\right)}
+\newcommand{\dpartial}[2]{\left(\dfrac{\partial E_{#1}}{\partial E_{#2}}\right)}
 %=================================================================
 %% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
 %% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
@@ -74,9 +74,9 @@ $^{1}$ \quad CIRCE Institute, Universidad de Zaragoza, Zaragoza 50018, Spain}
 %\conference{} % An extended version of a conference paper
 
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{Exergy cost analyses have become complementary to the analysis of energy systems. However, such analyses strongly depend on the expertise of the practitioner. This paper presents a mathematical theory that analyzes the decisions and pitfalls of conventional exergy costing based on the efficiencies of components. This theory is based on the definition of a linearized characteristic equation that represents the physical behavior of each component. The physical structure of the system described by its energy interrelationships is called “primal”, and its derivatives are the costs and consumptions. The obtained costing structure is the mathematical dual of its primal. The theory explains why the F and P costing propositions and any other suggestion may (or may not be) rational under a given disaggregation scheme. A result of the theory is the definition of a new thermodynamic function, called the “relative free energy” $\ell$, defined as $\ell=(h_1 - h_0) - T_d (s_1 - s_0)$; and $T_d = (dh/ds)_r$ is the deterioration temperature due to a component deterioration cause $r$, which is characterized by a mathematical trajectory $h_r = h(s_r)$ describing the effects on the exiting stream. In this paper, it is demonstrated that the pair $(\ell,T_d)$ is the Legendre transform of the pair $(h_r,s_r)$. The relative free energy function allows for an exact relationship between the amount of used resources and the increase in entropy generation caused by the deterioration path of the component. Costing with the relative free energy instead of exergy may open a new path for more precise assessments of component deteriorations. }
+\abstract{Exergy cost analyses have become complementary to the analysis of energy systems. However, such analyses strongly depend on the expertise of the practitioner. This paper presents a mathematical theory that analyzes the decisions and pitfalls of conventional exergy costing based on the efficiencies of components. This theory is based on the definition of a linearized characteristic equation that represents the physical behavior of each component. The physical structure of the system described by its energy interrelationships is called “primal”, and its derivatives are the costs and consumptions. The obtained costing structure is the mathematical dual of its primal. The theory explains why the F and P costing propositions and any other suggestion may (or may not be) rational under a given disaggregation scheme. A result of the theory is the definition of a new thermodynamic function, called the “relative free energy”, $\ell$, defined as $\ell=(h_1 - h_0) - T_d (s_1 - s_0)$; and $T_d = (dh/ds)_r$ is the deterioration temperature due to a component deterioration cause $r$, which is characterized by a mathematical trajectory $h_r = h(s_r)$ describing the effects on the exiting stream. In this paper, it is demonstrated that the pair $(\ell,T_d)$ is the Legendre transform of the pair $(h_r,s_r)$. The relative free energy function allows for an exact relationship between the amount of used resources and the increase in entropy generation caused by the deterioration path of the component. Costing with the relative free energy instead of exergy may open a new path for more precise assessments of component deteriorations.}
 % Keywords
-\keyword{Thermoeconomics; Structural Theory; Characteristic Equation; Exergy Cost Theory; Relative Free Energy; Deterioration Temperature; Costing Assessment; Cost conservation equation; Exergy Dual/Primal; Thermoeconomic Diagnosis.}
+\keyword{thermoeconomics; structural theory; characteristic equation; exergy cost theory; relative free energy; deterioration temperature; costing assessment; cost conservation equation; exergy dual/primal; thermoeconomic diagnosis.}
 %\setcounter{secnumdepth}{4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -84,7 +84,7 @@ $^{1}$ \quad CIRCE Institute, Universidad de Zaragoza, Zaragoza 50018, Spain}
 \section{Introduction}
 Among its many interpretations, exergy $(Ex)$ is a physical measure (kWh) of distinction from commonness; the exergy is always associated with the chosen reference environment (commonness). Moreover, its analyses are always an alternative (and complementary) view of economic analyses. Currently, exergy is an appropriate property for allocating costs; it assesses how many resources are required to manufacture a product in concurrence with other co-products, by-products, and wastes. Hence, “costing” is an important application of exergy.
 
-The \emph{exergy cost} (kWh), \cite{Valero1986a} (i.e. \emph{cumulative exergy consumption} \cite{Morris1986,Szargut1988}  or \emph{embodied exergy} according to some authors)measures the amount of exergy necessary to manufacture a product when the boundaries of the production plant, disaggregation level, and exergy efficiency of each component have been defined \cite{Valero1986a,Lozano1993}. Herein, the exergy cost of a stream with exergy $Ex$ is denoted with an asterisk, $Ex^*$, and its unit exergy cost is expressed as follows: $k^*\equiv Ex^*/Ex$.
+The \emph{exergy cost} (kWh), \cite{Valero1986a}, \emph{cumulative exergy consumption} \cite{Morris1986,Szargut1988}  or \emph{embodied exergy} according to some authors, measures the amount of exergy necessary to manufacture a product when the boundaries of the production plant, disaggregation level, and exergy efficiency of each component have been defined \cite{Valero1986a,Lozano1993}. Herein, the exergy cost of a stream with exergy $Ex$ is denoted with an asterisk, $Ex^*$, and its unit exergy cost is expressed as follows: $k^*\equiv Ex^*/Ex$.
 
 The process of costs allocation in manufacturing systems requires a set of rules for the case of bifurcated streams \cite{Lozano1993,Tsatsaronis2007}. The most important rules are as follow: 
 
@@ -135,12 +135,12 @@ Moreover, are the costs average costs or marginal costs? The exergy of a stream 
 Despite these doubts, the analyst aims to obtain reasonable costs. Thus, it is necessary to disaggregate the system as far as common sense advises. Second, the definition of efficiency for each component requires caution. Third, choosing exergy is better than other energy-like functions because it provides a proxy for the locally usable energy. Fourth, the selected reference level for exergy must be realistic. Finally, the average costs should be useful in predicting how many additional resources compensate for the small system perturbations. While theory does not support these assumptions, practice does. The objective of this study is to provide a general theory for solving some of these questions and for providing a path for solving newly arising questions. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{On the Linearity of Cost: the Structural Theory of Thermoeconomics}
-Any energy system that consumes resources and manufactures products can be characterized by a thermodynamic function $E$ of the generic type, $E = m (h-T_x s)$ where $m$ is the mass, $h$ the enthalpy, $s$ the entropy with respect to a certain reference, and $T_x$ the temperature to choose under certain conditions. When $T_x$ is zero, the function $E$ is the enthalpy; when $T_x$ is the ambient temperature, $E$ is the exergy; if $T_x$ is the temperature of the system, $E$ is the Gibbs function.
-The mathematical behavior of any component can be described through functions of the type:
+\section{On the Linearity of Cost: The Structural Theory of Thermoeconomics}
+Any energy system that consumes resources and manufactures products can be characterized by a thermodynamic function $E$ of the generic type, $E = m (h-T_x\,s)$ where $m$ is the mass, $h$ the enthalpy, $s$ the entropy with respect to a certain reference, and $T_x$ the temperature to choose under certain conditions. When $T_x$ is zero, the function $E$ is the enthalpy; when $T_x$ is the ambient temperature, $E$ is the exergy; if $T_x$ is the temperature of the system, $E$ is the Gibbs function.
+The mathematical behavior of any component $u$ can be described through functions of the type:
 \begin{equation}
     \label{eq:gcf}
-    E_i=f_i(\{x\},\{E_j\}) \qquad i\in\mathcal{E}_u
+    E_i=f_i\left(\{x\},\{E_j\}\right) \qquad i\in\mathcal{E}_u
 \end{equation}
 where $i\in\mathcal{E}_u$ are the input flows of component $u$ and $j\in\mathcal{S}_u$ the output flows of component $u$, and $\{x\}$ is the set of its internal governing parameters, for instance, internal efficiencies, pressure relationships, temperature increases, geometric parameters, structural parameters, fluid dynamic parameters or heat transfer parameters.
 
@@ -159,6 +159,7 @@ it satisfies evidently the following expresion for each and every component:
 \dpartial{0}{j}=\sum_{i\in\mathcal{E}_u}{\dpartial{0}{i}\,\dpartial{i}{j}}
 \label{eq:mcost}
 \end{equation}
+
 Note that in case of the flows entering the plant, it leads:
 \begin{equation}
 k_{j}^{*}=1 \qquad j\in\mathcal{S}_0
@@ -169,8 +170,8 @@ Function \cref{eq:gcf} does generally not relate inputs and outputs linearly. Be
 However, such a continuous function allows for a Taylor series approximation. In addition, by choosing sufficiently small linear intervals, second-order terms can be discarded. The smaller the interval, the closer is the proposed behavior to reality. By applying this step, the following is obtained:
 \begin{equation}
     E_i=\begin{dcases}
-    \sum\limits_{j\in\mathcal{S}_u}{k_{ij}(x)\,E_j} \qquad &i\in\mathcal{E}_u \\
-    \omega_i\;\text(const.) \qquad &i\in\mathcal{E}_0
+    \;\sum\limits_{j\in\mathcal{S}_u}{k_{ij}(x)\,E_j} \qquad &i\in\mathcal{E}_u \\
+    \;\omega_i\;\text(const.) \qquad &i\in\mathcal{E}_0
     \end{dcases}
     \label{eq:echar}
 \end{equation}
@@ -186,15 +187,13 @@ and
 \end{equation}
 Herein, this expression is called the \emph{component's characteristic equation}.
 
-Therefore, the marginal cost relationship \cref{eq:mcost} could be expressed as follow: 
+Moreover, the cost allocation is a basic application of the rule of the chain in the derivative calculation, and \cref{eq:mcost}, which is independent on the characteristic equations are linear or not, could be expressed as follow:
 \begin{equation}
-    k_{j}^{*}=\sum_{i\in\mathcal{E}_u}{k_{ij}\,k_{i}^{*}}
-    \label{eq:kchar}
+k_{j}^{*}=\sum_{i\in\mathcal{E}_u}{k_{ij}\,k_{i}^{*}}
+\label{eq:kchar}
 \end{equation}
 
-In other words, the unit consumption establishes the cost ratio between the inputs and outputs. Moreover, the cost allocation is a basic application of the rule of the chain in the derivative calculation. Note also that \cref{eq:kchar} is independent on the characteristic equations are linear or not. The application of this equation explains the previously mentioned Rules $F$ and $P$ (as a particular case).
-
-For example, a turbine (\cref{fig:turbine}) with the following defined efficiency is considered: 
+The application of this equation explains the previously mentioned Rules $F$ and $P$ as a particular case. For example, a turbine (\cref{fig:turbine}) with the following defined efficiency is considered: 
 \begin{center}
   \begin{minipage}[c]{0.50\linewidth}
    \centering
@@ -241,6 +240,7 @@ However, if a typical electric power distribution system is considered, its effi
   \captionof{figure}{Generic electric power distribution system as an example of application of Rule P.}
   \label{fig:distributor}
 \end{center}
+
 Again, it is assumed that the characteristic equation of the distribution system coincides with its exergy definition. If k is constant, applying the unit cost \cref{eq:echar} results in:
 \begin{equation}
     k_2^*=k\,k_1^*     \qquad \text{and}\qquad    k_3^*=k\,k_1^*
@@ -256,7 +256,7 @@ In general, the disaggregation of the process in \cref{fig:genplant} can be desc
 \end{figure}
 
 \begin{equation}
-    \def\arraystretch{1.8}
+    \def\arraystretch{2.1}
     \left\{\begin{array}{l}
         E_1=k_{12}\,E_2 + k_{13}\,E_3 \\
         E_2=k_{24}\,E_4 + k_{26}\,E_6 \\
@@ -280,7 +280,7 @@ In general, the disaggregation of the process in \cref{fig:genplant} can be desc
 \end{equation}
 Subsequently, according to the rule of the chain of the derivatives, the following expressions are obtained:
 \begin{equation}
-    \def\arraystretch{1.8}
+    \def\arraystretch{2.1}
     \left\{\begin{array}{l}
        \dpartial{0}{1}=1 \\
        \dpartial{0}{2}=\dpartial{0}{1}\,\dpartial{1}{2} \\
@@ -302,11 +302,11 @@ Subsequently, according to the rule of the chain of the derivatives, the followi
     \end{array}\right.
     \label{eq:kgenplant}
 \end{equation}
-\Cref{eq:egenplant} can be rewritten in the matrix form: 
+\Cref{eq:echar} can be rewritten in the matrix form: 
 \begin{equation}
     \vm{E}=\left[\vm{K}\right]\,\vm{E}+\vm{\Omega}
 \end{equation}
-where $\left[\vm{K}\right]$ is the matrix of unit consumption's, and $\vm{\Omega}$ the vector of system's outputs values, and \cref{eq:kgenplant} becomes:
+where $\left[\vm{K}\right]$ is the matrix of unit consumption's, and $\vm{\Omega}$ the vector of system's outputs values, and \cref{eq:kchar} becomes:
 \begin{equation}
     \vm{k}^* = \tm\left[\vm{K}\right]\,\vm{k}^* + \vm{k}_0^*
 \end{equation}
@@ -346,7 +346,7 @@ where $\vm{k}_0^*$ is the unit cost of the system's input flows.
     \right]
 \end{equation*}
 
-Note that the matrix of the unit consumption $\left[\vm{K}\right]$ is common and transposed between \cref{eq:egenplant,eq:kgenplant}. \Cref{eq:egenplant} is the \emph{primal} of the structure and \cref{eq:kgenplant} is its dual. Every productive structure or linear input–output interpretation of a system exhibits a primal representation with a corresponding single dual and vice versa \cite{Boyd2004}.
+Note that the matrix of the unit consumption $\left[\vm{K}\right]$ is common and transposed between \cref{eq:echar,eq:kchar}. \Cref{eq:echar} is the \emph{primal} of the structure and \cref{eq:kchar} is its dual. Every productive structure or linear input–output interpretation of a system exhibits a primal representation with a corresponding single dual and vice versa \cite{Boyd2004}.
 
 While the arrows in the productive process point from the resources toward the products, the cost structure (or dual) point from the products toward the resources. The costs search for causes, while the products search for the objective. \cite{Valero1990d}.
 
@@ -367,13 +367,12 @@ For instance, the case of component 1 is chosen, and the input equation:
 \[
 E_1=k_{12}\,E_2+k_{13}\,E_3
 \] 
-is combined with its output equations $k_2^*=k_{12}\,k_1^*$ and $k_2^*=k_{12}\,k_1^*$,
-Consequently: 
+is combined with its output equations $k_2^*=k_{12}\,k_1^*$ and $k_2^*=k_{12}\,k_1^*$, consequently: 
 \[
  k_1^*\,E_1 = k_2^*\,E_2+k_3^*\,E_3
 \]
 
-In general,applying \cref{eq:echar,eq:kchar} to \cref{eq:costbal} the cost balance is satisfied:
+In general, applying \cref{eq:echar,eq:kchar} to \cref{eq:costbal} the cost balance is satisfied:
 \begin{equation}
     \sum_{i\in\mathcal{E}_u}{k_i^*\,E_i}=\sum_{i\in\mathcal{E}_u}{k_i^*\,\sum_{j\in\mathcal{S}_u}{k_{ij}\,E_j}}=\sum_{j\in\mathcal{S}_u}{\left(\sum_{i\in\mathcal{E}_u}\,k_i^*\,k_{ij}\right)E_j}=\sum_{j\in\mathcal{S}_u}{k_j^*\,E_j}
 \end{equation}
@@ -381,6 +380,7 @@ and the cost balance for the global plant, will be:
 \begin{equation}
     E_0=\sum_{j\in\mathcal{S}_0}{E_j}=\sum_{i\in\mathcal{E}_0}{k_i^*\,E_i}
 \end{equation}
+
 Therefore, the plant's incidence matrix $\vm{A}$, can be defined as:
 \begin{equation}
     a_{ij}=\begin{cases}
@@ -389,7 +389,7 @@ Therefore, the plant's incidence matrix $\vm{A}$, can be defined as:
     \phantom{-}0 & \text{otherwise}
     \end{cases}
 \end{equation}
-Hence, the analyzed case can be described as follows:
+hence, the analyzed case can be described as follows:
 \begin{equation*}
     \vm{A}=\left[\begin{array}{rrrrrr}
     1 & -1 & -1 &  0 &  0 &  0 \\
@@ -397,12 +397,13 @@ Hence, the analyzed case can be described as follows:
     0 &  0 &  1 &  0 & -1 &  1
     \end{array}\right]
 \end{equation*}
+
 In general, the following expression holds:
 \begin{equation}
     \vm{A} \cdot \vm{E}^{*} = \vm{0}
     \label{eq:mbalcost}
 \end{equation}
-\Cref{eq:mbalcost} shows the \emph{cost conservation equation}. It is a mathematical consequence of the founded hypotheses.
+and \cref{eq:mbalcost} shows the \emph{cost conservation equation}. It is a mathematical consequence of the founded hypotheses.
 
 This result is quite remarkable because the following equations sumarize straightforwardly the Equilibrium Thermodynamics for open systems:
 \begin{align}
@@ -430,13 +431,15 @@ Take, for instance, the case of , its (linearized) characteristic equation is of
 \begin{equation*}
     E_1=k_{14}\,E_4 + k_{15}\,E_5
 \end{equation*}
+
 Its efficiency equation could be of the following type:
 \begin{equation*}
    Ex_{1}=k\,Ex_{3}+Ex_4 
 \end{equation*}
+
 The similarity is evident; however, the more the analyst aggregates, the more deviates the physical behavior of the system from the definition. Note that the reference environment of the exergy depends on the practitioner choice, whereas \cref{eq:echar} should be independent.
 
-The Structural theory \cite{Valero1993} has been largely ignored in the study of different alternate rules for costing allocations, such as in the allocation of the costs of wastes, by-products, or co-products. This might be due to the difficulties of determining the fundamental equations of components as in\cref{eq:gcf} or their linearized equations (e.g., \cref{eq:echar}). Rather, the theory has been used to check the logics of Rules F and P.
+The Structural theory \cite{Valero1993} has been largely ignored in the study of different alternate rules for costing allocations, such as in the allocation of the costs of wastes, by-products, or co-products. This might be due to the difficulties of determining the fundamental equations of components as in \cref{eq:gcf} or their linearized equations, \cref{eq:echar}. Rather, the theory has been used to check the logics of rules $F$ and $P$.
 
 Note that Odum's Emergy Analysis \cite{Odum1988,Brown1996} does not satisfy \eqref{eq:mbalcost} because it considers that when a biological system produces simultaneously two products, the same amount of solar energy is required for each product. This does not deny the idea of emergy; it simply states that this is not a regular cost.
 
@@ -476,10 +479,11 @@ Regardless of the way the quality of every flow, product, or service is defined 
 \begin{equation}
 X=q_x\cdot x
 \end{equation}                      
+
 It would be interesting to determine the number of resources required to compensate for a deterioration of any component in a constant production for a set of quality specifications for each flow interacting in a system.
 
-\section{The Relative Free Energy function}
-Before generalizing the problem, a simple case should be analyzed: for example, the expanding flow of a turbine produces work on the axis. In an $(h, s)$ diagram, the actual process evolves from state 1 to state 2 (\cref{fig:dt1}). 
+\section{The Relative Free Energy Function}
+Before generalizing the problem, a simple case should be analyzed: for example, the expanding flow of a turbine produces work on the axis. In an $(h, s)$ diagram, \cref{fig:dt1}, the actual process evolves from state 1 to state 2. 
 \begin{center}
 	\begin{minipage}[c]{0.48\linewidth}
 		\centering
@@ -489,7 +493,7 @@ Before generalizing the problem, a simple case should be analyzed: for example, 
 		\centering
 		\includegraphics[scale=0.8]{dt1}
 	\end{minipage}
-	\captionof{figure}{The degradation path of a turbine and its deterioration temperature}
+	\captionof{figure}{The deterioration path of a turbine}
 	\label{fig:dt1}
 \end{center}
 
@@ -498,6 +502,7 @@ The energy and entropy balances of the process (first and second laws) are as fo
 W=&\,m\left(h_1-h_2\right)\\
 S_g=&\,m\left(s_2-s_1\right)
 \end{align}
+
 If the turbine degrades, at a rate equal to the specifications of the inflow \#1, an increase in the entropy generation evidently results in an increase in the amount of entering fuel (path 1) to keep the production constant. Owing to the degradation, the new state of the outflow \#2' is characterized by  ($h_{2'}$, $s_{2'}$).
 
 A differential analysis under the conditions: $W$=const., $h_1$=const., and $s_1$=const., leads to the following expressions:
@@ -505,7 +510,7 @@ A differential analysis under the conditions: $W$=const., $h_1$=const., and $s_1
 \left(h_1-h_2\right) dm &= m \, dh_2\\
 \left(s_1-s_2\right) dm + m \, ds_2 &= dS_g
 \end{align}
-Subsequently, the deterioration temperature of flow \#2 is defined as a quotient:
+Subsequently, the \emph{deterioration temperature} of flow \#2 is defined as a quotient:
 \[
 T_{d_2}\equiv dh_2/ds_2
 \]
@@ -518,7 +523,7 @@ where $r$ is the deterioration path, as it shown is \cref{fig:dt1}.
 
 \Cref{eq:dt2} is the mathematical expression of the existing relationship between any local degradation and the increase in associated resources if the production of the component should remain constant.
 
-These equations and the function $\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were presented in \cite{Valero1992b}. Valero called it the \emph{relative free energy}, and $T_d$ the \emph{deterioration temperature} \cite{Royo1994,Royo1995}. The expression “relative free energy” originates from its similarity to the Gibbs free energy function. \Cref{eq:dt2} states that any deterioration process in an energy component has an associated $T_d$. This parameter possesses temperature dimensions even if it is not a measurable temperature; it can be calculated by measuring the quotient $dh_2/ds_2$ experienced by the output flow of the component.
+These equations and the function $\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were presented in \cite{Valero1992b}. Valero called it the \emph{relative free energy} (RFE), and $T_d$ the \emph{deterioration temperature} \cite{Royo1994,Royo1995}. The expression “relative free energy” originates from its similarity to the Gibbs free energy function. \Cref{eq:dt2} states that any deterioration process in an energy component has an associated $T_d$. This parameter possesses temperature dimensions even if it is not a measurable temperature; it can be calculated by measuring the quotient $dh_2/ds_2$ experienced by the output flow of the component.
 
 The heat exchanger \cref{fig:dt2} experiences the same procedure  
 \begin{center}
@@ -530,9 +535,10 @@ The heat exchanger \cref{fig:dt2} experiences the same procedure
 		\centering
 		\includegraphics[scale=0.8]{dt2}
 	\end{minipage}
-	\captionof{figure}{Degradation path and deterioration temperature of heat source in heat exchanger}
+	\captionof{figure}{Deterioration path of heat source in heat exchanger}
 	\label{fig:dt2}
 \end{center}
+
 In that case, the enthalpy and entropy balances are written as follows: 
 \begin{align}
 m_1 \left(h_1 - h_2 \right) - m_3 \left(h_4 -h_3\right) &= 0 \\
@@ -546,13 +552,14 @@ A differential analysis under these conditions leads to $(h_1,s_1)$ = constant:
 \left(h_1 - h_2\right) dm_1 = m_1 dh_2 \\
 dS_g - \left(s_1 - s_2\right) dm_1 = - m_1 ds_2 
 \end{align}
+
 The dissipation temperature of flow \#2 is defined as a quotient:
 \[
-	T_{d_2}\equiv -\frac{dh_2}/{ds_2}>0
+	T_{d_2}\equiv -\frac{dh_2}{ds_2}>0
 \]
-Subsequently \cref{eq:dt2} is also satisfied.
+and subsequently \cref{eq:dt2} is also satisfied.
 
-According to the second law, $dS_g$ is always positive; therefore, more fuel must be used to obtain the same product, and $dm > 0$. Because $T_{d,2}$ is positive, the term $(h_2-h_1 )-T_(d_2 ) (s_2-s_1 )$ must be positive; in other words, $T_{d,2} (s_1-s_2)$ is always greater than $(h_1-h_2)$.
+According to the second law, $dS_g$ is always positive; therefore, more fuel must be used to obtain the same product, and $dm > 0$. Because $T_{d,2}$ is positive, the term $(h_2-h_1 )-T_{d,2} (s_2-s_1 )$ must be positive; in other words, $T_{d,2} (s_1-s_2)$ is always greater than $(h_1-h_2)$.
 
 \section{h-s Deterioration(s) Path(s) of an Energy System}
 Man-made energy systems transform the energy flows one into another flows with a purpose. Commonly, the name of a component describes its function: a boiler boils water, a condenser condenses, and a heat exchanger exchanges heat. The understanding of how nature behaves is the basis of the component design. The entering flow performs a purposive path through which its thermodynamic properties change progressively until the flow exits the component. This path is never strictly determined, either because of possible changes in the quantity/quality of the entering flow or because of changes in the behavior of the component itself. This path variation results in a change in the properties of the exiting flow with respect to its design conditions. There are as many new exit states as causes of change, which are called “malfunctions” and are classified into two categories: intrinsic and induced \cite{Valero2004c,Valero1999c,Torres1999}. The term “intrinsic” refers to the internal deterioration of the component; the term “induced” refers to its off-design conditions (not the optimal operating conditions). A good component design foresees most of these off-design conditions. Literature and some manufacturers provide governing equations and control parameters based on semi-empirical models of the machines.
@@ -563,14 +570,15 @@ For a given deterioration cause $r$ of an energy component, either intrinsic or 
 	\item[$1 \longrightarrow 2':$] is the stream path after the component deterioration.
 	\item[$2 \longrightarrow 2':$] is the dissipation path of the exiting stream $h_{2'} = h_{2'} (s_{2'}, r).$
 \end{description}
+
 The function $h_{2'}=h_{2'} (s_{2'}, r)$ ) can be regarded as the mathematical description of the effects on the exiting flow caused by the component deterioration cause $r$. This function always exists for a given differential malfunction interval. Moreover, under actual machine conditions, this function is a composite curve of the different paths caused by the concurrent deteriorations acting simultaneously on the component \cite{Valero2004c}. The next section focuses on this function.
 
-\section{The Legendre transform of a deterioration path}
+\section{The Legendre Transform of a Deterioration Path}
 For each deterioration cause, $r$, the existence of a function $h = h(s)$ of the exiting flow can be assumed, which can be described in the $h-s$ plane with the conventional point geometry or Plücker line geometry for strictly convex functions as a convolution of the tangents of the original curve. This technique is named the \emph{Legendre transform} of the function $h = h(s)$ and is widely used in classical thermodynamics \cite{Callen1985,Alberty2001}.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.8]{rfe.pdf}
+	\includegraphics[scale=0.78]{rfe.pdf}
 	\caption{Geometric representation of the relative free energy and deterioration temperature}
 	\label{fig:rfe}
 \end{figure}
@@ -584,23 +592,26 @@ or
 \ell=h-T_d\,s \qquad \text{i.e.} \qquad \ell=\ell(T_d)
 \label{eq:lgdr}
 \end{equation}
+
 \Cref{eq:lgdr} is the \emph{Legendre transform} of the deterioration path $h_{2'}=h_{2'}(s_{2'},r)$. In fact, pairs of $(\ell_{2'} , T_{d,2'})$ for each exit state, \#2', of the component provide the same information as pairs $(h_{2'},s_{2'}$). Because the relationship  $\ell_{2'} = \ell_{2'}(T_{d,2'})$ is mathematically equivalent to the relationship $h_{2'} = h_{2'} (s_{2'}, r)$, it can also be considered the description of the deterioration path. More in general, $h_r=h_r (s_r)$, is the deterioration function in the \emph{h-representation}; whereas $\ell_r = \ell_r(T_d,r)$ is the deterioration function in the \emph{l-representation} . In other words, $\ell_r$ and $T_{d,r}$ , are inseparable in a deterioration path, $r$, such as $h_r$ and $s_r$ do. Note also that $h$ and $s$ do not represent absolute values because they refer $h_0$ and $s_0$ values. Unless otherwise stated $h$ and $s$ represent $(h-h_0)$ and $(s-s_0)$.
 
 The deterioration temperature, $T_d$, is not a physical temperature; ; it is a parameter and derivative with temperature dimensions:  
 \begin{equation}
 T_d=\left(\frac{dh}{ds}\right)_r
 \end{equation}      
+
 It can be interpreted as the entropic cost of the dissipation. The greater Td, the lower is the relative free energy of the exiting flow.
 Well-known contributors to technical thermodynamics such as Baehr \cite{Baehr2005,Baehr1979} have defined the “friction work” or “loss work” for an expander as follows: 
 \begin{equation}
 	dW_r=T_d\,dS_g
 \end{equation}
+
 This loss work is energy that has not been dissipated into the environment at $T_0$ and contributes to the degradation of the exiting flow of the expander. It increases the enthalpy and entropy of the exiting stream and reduces the work produced by the turbine, thereby decreasing its efficiency.
 
 Another important antecedent was the work of Alefeld \cite{Alefeld1988}, who worked on heat pumps and refrigeration systems: he questioned the use of the reference ambient temperature $T_0$ instead of a variable temperature $T_x$ associated with the equipment. In particular, he proposed for the case of a condenser, that this temperature $T_x$ be equal to that of the condenser vacuum, $T_{vac}$. Alefeld was highly criticized by the community of exergy practitioners, because the holistic vision that exergy provides was lost in his theory. This article is a recognition to his work because mathematical proofs are stronger than reasonable assumptions.
 
 \section{Relationship Between Exergy and Relative Energy Function Transform} 
-The relative free energy function $\ell$ represents the local free energy conditioned by the dissipation path, $r$. It is an intensive property, and its corresponding extensive property 
+The relative free energy function $\ell$ represents the local free energy conditioned by the dissipation path, $r$. It is an intensive property, and its corresponding extensive property: 
 \begin{equation}
 \Lgdr = m\,\ell
 \end{equation}                                                
@@ -623,11 +634,12 @@ Therefore, the following expression is obtained:
 \begin{equation}
 dF=T_0\,dS_g=dW_r \frac{T_d}{T_0}
 \end{equation}
-Combining it with \cref{eq:dt2}, results in the following equations:
+and combining it with \cref{eq:dt2}, results in the following equations:
 \begin{equation}
 \left(\frac{dm}{dS_g}\right)_r = \frac{T_0}{ex_2'-ex_2}=\frac{T_{d,2}}{\ell_1-\ell_2}
 \label{eq:dmsg}
 \end{equation}
+
 Consequently, function $\ell$ becomes more familiar. \Cref{eq:dmsg} presents the relationship between the increase in the entropy generation in a process in which a stream performs an activity; the amount of required additional resources depends on the following specifications: 
 \begin{itemize}
 	\item Constant quality of the entering resource, and
@@ -643,9 +655,9 @@ This expression shows that the second law has not yet said the last word regardi
 In general, the reason of why $T_d$ instead of $T_0$ , stems from the fact that the additional degraded energy not used in producing the product becomes part to the exiting streaming instead of going directly to the environment at $T_0$. Then, $dh_2$ and $ds_2$ are always positive and the value of $T_d$ depends on how great the additional irreversibility is created. Such interpretation of $T_d$, allows understand that, its lowest attainable value is $T_0$, while it has no superior limits. 
 Note also that if $T_d$ is greater than $T_0$, then $ex_i$ is always greater than $\ell_i$.
 
-In other words, the deterioration lowers the free energy of the exiting stream. As this deterioration always relates to some component, this is why we name this function the Relative Free Energy. In the same way that the Gibbs free energy relates to some chemical reaction, the RFE relates to some component deterioration in a system.
+In other words, the deterioration lowers the free energy of the exiting stream. As this deterioration always relates to some component, this is why we name this function the relative free energy. In the same way that the Gibbs free energy relates to some chemical reaction, the RFE relates to some component deterioration in a system.
 
-\section{Towards a new diagnosis theory of energy systems}
+\section{Towards a New Diagnosis Theory of Energy Systems}
 The key problem of diagnosis of energy systems stems in how to assess, as precisely as possible, the relationship between local irreversibilities and additional consumption of resources. At constant production, a local irreversibility needs additional resources to compensate it, but also modifies the exiting streams, affecting downstream enthalpies and entropies and eventually the upstream ones, if recycling. 
 A certainty derives from the Second Law: Any inefficiency in a process increases the entropy generation. This means that any mechanical, thermal or chemical loss generates entropy and reduces efficiency. However, any efficiency decrease means more amount resources (at equal quality) to get the same product. 
 If one knows the amount of local resources needed to compensate a local deterioration, $r$, i.e.
@@ -681,6 +693,7 @@ This paper presents a General Theory of (linear) Costing, demonstrating and answ
 	$\ell_2 = \ell_2(T_{d,2} , r)$. In other words, the pairs  $\ell_r$ and $T_{d,r}$, are so inseparable in a deterioration path, $r$, as the pairs $(h_r,s_r)$ do.
 	\item The general formula \eqref{eq:dmsg} applies for different flowing streams in energy systems under a given deterioration path, $r$. A given component may have several deterioration paths, not only one. Therefore, the concept of component malfunction need be associated with that of deterioration paths.	
 \end{itemize}
+
 This theory sketched here opens new fields of knowledge, since new questions appear:  Is exergy the best thermodynamic function when diagnosing systems? Why $T_0$ needs to be the same for each component of a given structure? Can we use this theory to assess objective average costs of deteriorations free from assumptions? The deterioration behavior of an energy system relates with internal marginal costs while exergy costs with history. Should we change our definitions of efficiency under the light of the relative free energy function? Etc. Even if described early in the nineties, all these ideas are tools for future, \cite{Naredo2000}. Cost is a measure of expended resources to produce something, then, costing with the Relative Free Energy instead of Exergy would open a new field of a more precise theory of Thermoeconomics. We presently work in such ideas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{12pt}
