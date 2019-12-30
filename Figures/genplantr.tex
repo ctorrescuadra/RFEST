@@ -1,0 +1,38 @@
+\documentclass[10pt,tikz,border=1mm]{standalone} 
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usetikzlibrary{positioning,calc,arrows.meta}
+\tikzstyle{arrow}=[-{Stealth[scale=1.25]},thin,text=black,font=\normalsize,draw=black]
+\tikzstyle{process}=[rectangle,minimum height=1.5cm,minimum width=2cm,fill=black!5,draw=black,very thick]
+\tikzstyle{empty}=[circle,inner sep=0pt,fill=none]
+\tikzstyle{hdist}=[node distance=2.5cm]
+\tikzstyle{number}=[circle,fill=black!10,font=\footnotesize,inner sep=0.5mm,draw=black,thin]
+\begin{document}
+	\begin{tikzpicture}
+		%\draw[step=1cm,black!20,very thin] (-1,-2) grid (7,2);
+		\node [empty] (V0)  {};
+		\node [process] (N1) [right of=V0,hdist]{};
+		\node [process,at={(6.5,1.5)}] (N2) {};
+		\node [process,at={(6.5,-1.5)}] (N3) {};
+		\node [empty] (W1) [right of=N2,hdist] {};
+		\node [empty] (W2) [right of=N3,hdist] {};
+		\draw [arrow] (N1) -- node[above]{1} (V0);
+		\coordinate (N1a) at ($(N1.east)!0.5!(N1.north east)$);
+		\coordinate (N1b) at ($(N1.east)!0.5!(N1.south east)$);
+		\draw [arrow] (N2.west) -- node[above]{2} (N1a);
+		\draw [arrow] (N3.west) -- node[below]{3} (N1b);
+		\draw [arrow] (W1) -- node[above]{4} (N2);
+		\draw [arrow] (W2) -- node[above]{5} (N3);
+		\draw [arrow] (N3) -- node[left]{6} (N2);
+		\node[number,at={(1.75,-0.5)}] {1};
+		\node[number,at={(5.75,1)}] {2};
+		\node[number,at={(5.75,-2)}] {3};
+		\draw[very thin,dashed] (N1b) to [out=160,in=0] (N1.west);
+		\draw[very thin,dashed] (N1a) to [out=200,in=0] (N1.west);
+		\draw[very thin,dashed] (N2.west) -- (N2.east);
+		\draw[very thin,dashed] (N2.west) to [out=0,in=90] (N2.south);
+		\draw[very thin,dashed] (N3.west) to [out=0,in=270] (N3.north);
+		\draw[very thin,dashed] (N3.west) -- (N3.east);
+	\end{tikzpicture}
+\end{document}		
+	

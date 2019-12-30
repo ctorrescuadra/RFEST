@@ -1,0 +1,18 @@
+\documentclass[10pt,tikz,border=1mm]{standalone} 
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usetikzlibrary{positioning,calc,arrows.meta}
+\begin{document}
+	\begin{tikzpicture}[scale=0.16]
+	%\draw[step=1cm,black!20,very thin] (0,-15) grid (35,15);
+	\draw[fill=black!50,draw=none] (0,5)--(8,5)--(8,-5)--(0,-5)--(2,0)--cycle;	
+	\draw[fill=black!70,draw=none] (15,5) arc(270:360:2cm) -- (17,11) -- (18,12) -- (19,11) -- (19,7) arc(0:-90:4cm)--cycle;
+	\draw[fill=black!20,draw=none] (15,3) -- (19,3) arc(270:360:2cm) arc(180:90:7cm) -- (31,12) -- (32,9.5) -- (31,7) -- (28,7) arc (90:180:2cm) arc(0:-90:7cm) -- (15,-2) -- cycle;
+	\draw[fill=black!20,draw=none] (15,-2) -- (21,-2) arc(90:0:5cm) arc(180:270:2cm) -- (31,-9) -- (32,-10.5) -- (31,-12)--(28,-12) arc(270:180:5cm) arc (0:90:2cm) -- (15,-5) -- cycle;
+	\draw[fill=black!5,thick] (8,-6) rectangle (15,6);
+	\node at (-0.25,0) {$F$};
+	\node at (18,13) {$I$};
+	\node at (33.2,9.5) {$P_1$};
+	\node at (33.2,-10.5) {$P_2$};
+	\end{tikzpicture}
+\end{document}
