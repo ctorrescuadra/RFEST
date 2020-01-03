@@ -8,7 +8,7 @@
 }
 \tikzstyle{dot}=[circle,fill=black,inner sep=1pt]
 \begin{document}
-\begin{tikzpicture}[scale=0.8,font=\large]
+\begin{tikzpicture}[scale=1,font=\large]
 	%\draw[step=1cm,black!20,very thin] (0,0) grid (10,10);
 	\draw[-{>[scale=2]},thin] (0,0) -- node[left]{h} (0,8);
 	\draw[-{>[scale=2]},thin]  (0,0) -- node[below]{s} (9.5,0);
@@ -23,6 +23,6 @@
 	\draw (A) to [out=265,in=60] (P);
 	\centerarc[thin,blue] (B) (0:14:5cm);
 	\node[font=\normalsize] at (7,2.6) {$T_{d_2}$};
-	\node[font=\small,text width=3cm] at (8,4.2) {deterioration path $r$, $h=h(s,r)$};
+	\node[font=\small,text width=3cm] at (7.8,4.2) {deterioration path $r$, $h=h(s,r)$};
 \end{tikzpicture}
 \end{document}
