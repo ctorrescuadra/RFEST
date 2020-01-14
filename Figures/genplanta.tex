@@ -31,7 +31,7 @@
 	\coordinate (D1) at (0.5,0);
 	\coordinate (D2) at (0,1.5);
 	\coordinate (A) at (0.75,0);
-	\node (rect) at (4.5,0) [draw=black,thick,fill=white,nearly opaque,minimum width=7cm,minimum height=5cm] {};
+	\node (rect) at (4.5,0) [draw=black,thick,fill=white,opacity=0.75,minimum width=7cm,minimum height=5cm] {};
 	\draw[arrow1] ($(V0)-(D1)$) -- node[above]{1} (rect.west);
 	\draw[arrow1] ($(rect.east)+(D2)$) -- node[above]{4} ($(W1)+(D1)$);
 	\draw[arrow1] ($(rect.east)-(D2)$) -- node[below]{5}($(W2)+(D1)$);
