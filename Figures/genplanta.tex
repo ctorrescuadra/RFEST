@@ -7,7 +7,7 @@
 \tikzstyle{empty}=[circle,inner sep=0pt,fill=none]
 \tikzstyle{hdist}=[node distance=2.5cm]
 \tikzstyle{number}=[circle,fill=black!10,font=\footnotesize,inner sep=0.5mm,draw=black,thin]
-\tikzstyle{arrow1}=[-{Stealth[scale=1.5]},thin,text=black,font=\normalsize,draw=black]
+\tikzstyle{arrow1}=[-{Stealth[scale=1.5]},thick,text=black,font=\normalsize,draw=black]
 \begin{document}
 	\begin{tikzpicture}
 	%\draw[step=1cm,black!20,very thin] (-1,-2) grid (10,2);
@@ -22,8 +22,8 @@
 	\coordinate (N1b) at ($(N1.east)!0.5!(N1.south east)$);
 	\draw [arrow] (N1a) -- node[above]{2} (N2.west);
 	\draw [arrow] (N1b) -- node[below]{3} (N3.west);
-	\draw  (N2) -- (W1);
-	\draw  (N3) -- (W2);
+	\draw (N2) -- (W1);
+	\draw (N3) -- (W2);
 	\draw [arrow] (N2) -- node[left]{6} (N3);
 	\node[number,at={(1.75,-0.5)}] {1};
 	\node[number,at={(5.75,1)}] {2};
