@@ -41,7 +41,7 @@ $^{1}$ \quad CIRCE Institute, Universidad de Zaragoza, Zaragoza 50018, Spain}
 % Contact information of the corresponding author
 \corres{Correspondence: valero@unizar.es (A.V.); ctorresc@unizar.es (C.T.)}
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{Exergy cost analyses have become complementary to the analysis of energy systems. However, such analyses strongly depend on the expertise of the practitioner. This paper presents a mathematical theory that analyzes the decisions and pitfalls of conventional exergy costing based on the efficiencies of components. This theory is based on the definition of a linearized characteristic equation that represents the physical behavior of each component. The physical structure of the system described by its energy interrelationships is called “primal”, and its derivatives are the costs and consumptions. The obtained costing structure is the mathematical dual of its primal. The theory explains why the \emph{F} and \emph{P} costing propositions and any other suggestion may (or may not be) rational under a given disaggregation scheme. A result of the theory is a new thermodynamic function, called the \emph{relative free energy}, $\ell$, and a new parameter, $T_d$, called \emph{deterioration temperature} due to a component’s deterioration cause $r$, characterized by a thermodynamic trajectory $h=h(s, r)$ describing the effects on the exiting stream. In this paper, it is demonstrated that the pair $(\ell,T_d)$ is the Legendre transform of the pair $(h_r,s_r)$. The relative free energy function allows for an exact relationship between the amount of used resources and the increase in entropy generation caused by the deterioration path of the component. Costing with the relative free energy instead of exergy may open a new path for more precise assessments of component deteriorations.}
+\abstract{Exergy cost analyses have become complementary to the analysis of energy systems. However, such analyses strongly depend on the expertise of the practitioner. This paper presents a mathematical theory that analyzes the decisions and pitfalls of conventional exergy costing based on the efficiencies of components. This theory is based on the definition of a linearized characteristic equation that represents the physical behavior of each component. The physical structure of the system described by its energy interrelationships is called “primal”, and its derivatives are the costs and consumptions. The obtained costing structure is the mathematical dual of its primal. The theory explains why the \emph{F} and \emph{P} costing propositions and any other suggestion may (or may not be) rational under a given disaggregation scheme. A result of the theory is a new thermodynamic function, called the \emph{relative free energy}, $\ell$, and a new parameter, $T_d$, called \emph{deterioration temperature} due to a component’s deterioration cause $r$, characterized by a thermodynamic trajectory $h=h(s, r)$ describing the effects on the exiting stream. In this paper, it is demonstrated that the pair $(\ell,T_d)$ is the Legendre transform of the pair $(h_r,s_r)$. The relative free energy function allows for an exact relationship between the amount of used resources and the increase in entropy generation caused by the deterioration path of the component. This function allows to obtain, for the first time, an exact characteristic equation for a turbine and a new definition of efficiency that does not depend on the environment temperature but on its deterioration temperature. Also, costing with the relative free energy instead of exergy may open a new path for more precise assessments of component deteriorations.}
 % Keywords
 \keyword{thermoeconomics; structural theory; characteristic equation; exergy cost theory; relative free energy; deterioration temperature; costing assessment; cost conservation equation; exergy dual/primal; thermoeconomic diagnosis.}
 %\setcounter{secnumdepth}{4}
@@ -153,6 +153,7 @@ The advantage of a linear analysis is that it enables the understanding of many 
 and
 \begin{equation}
     E_i=\sum_{j\in\mathcal{S}_u}{\dpartial{i}{j}\,E_j} \qquad i\in\mathcal{E}_u
+    \label{eq:deqchar}
 \end{equation}
 herein, this expression is called the \emph{component's characteristic equation}.
 
@@ -496,11 +497,12 @@ These equations and the function $\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were p
 
 The heat exchanger \cref{fig:dt2} experiences the same procedure  
 \begin{center}
-	\begin{minipage}[c]{0.38\linewidth}
+	\begin{minipage}[c]{0.37\linewidth}
 		\centering
 		\includegraphics{heater}
 	\end{minipage}
-	\begin{minipage}[c]{0.58\linewidth}
+	\hskip0.9cm
+	\begin{minipage}[c]{0.55\linewidth}
 		\centering
 		\includegraphics[scale=0.8]{dt2}
 	\end{minipage}
@@ -624,16 +626,28 @@ This expression is quite important, because it relates the loss of efficiency in
 
 Therefore, a new definition of the efficiency (or its inverse specific consumption) of the turbine appears:
 \begin{equation}
-k_L \equiv \frac{F_L}{P_L} = \frac{\Lgdr_1 - \Lgdr_2}{W}=\frac{H_1-H_2-T_d \left(S_1 - S_2\right)}{W}
+k_L = \frac{F_L}{P_L} = \frac{\Lgdr_1 - \Lgdr_2}{W}=\frac{H_1-H_2-T_d \left(S_1 - S_2\right)}{W}
 \label{eq:kL}
 \end{equation} 
 
 This new definition of efficiency of the turbine has the important property that if the turbine malfunction follows the $r$ path, its characteristic equation becomes:
 \begin{equation}
-\Lgdr_1=\Lgdr_2 + k_L\,W
+\Lgdr_1=\Lgdr_2 + k_L\,W + Const.
+\label{eq:Lgdr}
 \end{equation}
+this constant may be selected as the reference state $(h_0,s_0)$. 
 
-This expression is not a mere definition but corresponds to a physical description of the system turbine and what is more important, it does not depend on the reference environment but on the behaviour of the turbine. In other words, the structural theory as explained in this paper combined with relative free energy function allows us to obtain a true characteristic function of the behaviour of thermodynamic systems. If under the Structural theory, the coefficients $k_{ij}$ are the precursors of costs $k_j^*$, should these costs be their “natural” costs? or perhaps they should be named “regular” costs?. In any case these costs would anticipate  future malfunctions,  in such way that  these average costs would become equal to their marginal costs associated to $r$ paths.
+Note that:
+\begin{equation}
+    \left(\frac{\partial \Lgdr_1}{\partial \Lgdr_2}\right)_W = 1
+\end{equation}
+because both, $\Lgdr_1$ and $\Lgdr_2$ only depends on $m$, and:
+\begin{equation}
+    \left(\frac{\partial \Lgdr_1}{\partial W}\right)_{\Lgdr_2} = K_L,
+\end{equation}
+in other words, it fulfills \cref{eq:dchar} of characteristic equations, thus demonstrating that \cref{eq:Lgdr} is a true characteristic equation.
+
+This expression is not a mere efficiency definition, as it is the unit exergy consumption definition $k\equiv F/P$, but corresponds to a physical description of the system turbine and what is more important, it does not depend on the reference environment temperature $T_0$, but on the behaviour of the turbine. the structural theory, as explained in this paper, together with the relative free energy function allows to obtain a true characteristic function of the behavior of thermodynamic systems. If under the Structural theory, the coefficients $k_{ij}$ are the precursors of costs $k_j^*$, should these costs be their “natural” costs? or perhaps they should be named “regular” costs?. In any case these costs would anticipate  future malfunctions,  in such way that  these average costs would become equal to their marginal costs associated to $r$ paths.
 
 The expression \cref{eq:dt2g} shows that the second law has not yet said the last word regarding the relationship between the thermodynamic quantity, quality, cost and irreversibility. In general, the reason of why $T_d$ instead of $T_0$ , stems from the fact that the additional degraded energy not used in producing the product becomes part to the exiting streaming instead of going directly to the environment at $T_0$.  The value of $T_d$ depends on how great the additional irreversibility is created. Such interpretation of $T_d$, allows understand that, its lowest attainable value is $T_0$, while it has no superior limits.
 
@@ -659,7 +673,7 @@ The use of exergy instead of enthalpy or the Gibbs function for obtaining costs 
 
 The exergy cost is the \emph{exergy backpack}, \emph{embodied exergy} or the \emph{exergy footprint} of a commodity; in fact, Szargut named it as “cumulative exergy consumption” i.e. its “past” characterization (history), while exergy is the potential energy of such a commodity, or its remaining capacity for doing something else. Can average costs predict future degradations or only past irreversibilities? 
 
-The purpose of Thermoeconomics is to obtain a coherent and significant set of costs in a given structure. That is because its applications are directed towards the optimization and diagnosis of productive structures. Therefore, the costs of internal streams are quite important to analyze the behavior of the system. Consequently, internal costs ought to be as sensitive as possible to system degradations. A theory that would provide exact costs would be the objective of thermoeconomic diagnosis. In fact, one can obtain the costs of final products --commodities--, without performing very detailed analyses. In other words, in no way Thermoeconomics, as it is already known, is far from being finished. Moreover, the analyst needs to look for the \emph{process of formation cost of wastes}, \cite{Torres2008}, not mentioned here even when some ideas developed here could be used to clarify it.
+The purpose of Thermoeconomics is to obtain a coherent and significant set of costs in a given structure. That is because its applications are directed towards the optimization and diagnosis of productive structures. Therefore, the costs of internal streams are quite important to analyze the behavior of the system. Consequently, internal costs ought to be as sensitive as possible to system degradation. A theory that would provide exact costs would be the objective of thermoeconomic diagnosis. In fact, one can obtain the costs of final products --commodities--, without performing very detailed analyses. In other words, in no way Thermoeconomics, as it is already known, is far from being finished. Moreover, the analyst needs to look for the \emph{process of formation cost of wastes}, \cite{Torres2008}, not mentioned here even when some ideas developed here could be used to clarify it.
 
 This paper presents a general theory of (linear) costing, demonstrating and answering questions like:
 \begin{itemize}
@@ -673,6 +687,7 @@ This paper presents a general theory of (linear) costing, demonstrating and answ
 	\item The Legendre transform of the deterioration path, $h_2=h_2 (s_2, r)$ is the relationship  
 	$\ell_2 = \ell_2(T_{d,2} , r)$. In other words, the pairs  $\ell_r$ and $T_{d,r}$, are so inseparable in a deterioration path, $r$, as the pairs $(h_r,s_r)$ do.
 	\item The general formula \eqref{eq:dt2g} applies for different flowing streams in energy systems under each particular deterioration path, $r_i$. A given component may have several deterioration paths, not only one. Therefore, the concept of component malfunction need be associated with that of deterioration paths.
+	\item A way for assessing true characteristic equations of thermal systems as it was obtained here for the case of  turbines.
 \end{itemize}
 
 The Exergy Cost Theory provides reasonable costs. Will the relative free energy provide a set of natural (or perhaps named regular) costs? In fact the cost of a deterioration is directly related to the physical behavior of that deterioration. This way it also means that these costs are in fact marginal costs, since they incorporate the future malfunction behavior of the component.
