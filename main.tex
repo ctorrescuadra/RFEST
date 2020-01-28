@@ -351,7 +351,7 @@ In general, applying \cref{eq:echar,eq:kchar} to \cref{eq:costbal} the cost bala
 \end{equation}
 and the cost balance for the global plant, will be:
 \begin{equation}
-    E_0=\sum_{j\in\mathcal{S}_0}{E_j}=\sum_{i\in\mathcal{E}_0}{k_i^*\,E_i}
+    E_0=\sum_{i\in\mathcal{E}_0}{k_i^*\,E_i}
 \end{equation}
 
 Therefore, the plant's incidence matrix $\vm{A}$, can be defined as:
@@ -378,7 +378,7 @@ In general, the following expression holds:
 \end{equation}
 and \cref{eq:mbalcost} shows the \emph{cost conservation equation}. It is a mathematical consequence of the founded hypotheses.
 
-This result is quite remarkable because the following equations summarize straightforwardly the Equilibrium Thermodynamics for open systems:
+This result is quite remarkable because the following equations summarize straightforwardly the equilibrium thermodynamics for open systems:
 \begin{align}
     &\vm{A}\cdot\vm{M} = \vm{0} &\quad & \text{Mass Balance} \label{eq:a1} \\
     &\vm{A}\cdot\vm{H} = \vm{0} &\quad & \text{Energy Balance} \label{eq:a2}\\
@@ -495,7 +495,6 @@ where $r$ is the deterioration path, as it shown is \cref{fig:dt1}.
 
 These equations and the function $\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were presented in \cite{Valero1992b}. Valero called it the \emph{relative free energy} (RFE), and $T_d$ the \emph{deterioration temperature} \cite{Royo1994,Royo1995}. The expression “relative free energy” originates from its similarity to the Gibbs free energy function. \Cref{eq:dt2} states that any deterioration process in an energy component has an associated $T_d$. This parameter possesses temperature dimensions even if it is not a measurable temperature; it can be calculated by measuring the quotient $dh_2/ds_2$ experienced by the output flow of the component.
 
-The heat exchanger \cref{fig:dt2} experiences the same procedure  
 \begin{center}
 	\begin{minipage}[c]{0.37\linewidth}
 		\centering
@@ -510,7 +509,7 @@ The heat exchanger \cref{fig:dt2} experiences the same procedure
 	\label{fig:dt2}
 \end{center}
 
-In that case, the enthalpy and entropy balances are written as follows: 
+The heat exchanger \cref{fig:dt2} experiences the same procedure. In that case, the enthalpy and entropy balances are written as follows: 
 \begin{align}
 m_1 \left(h_1 - h_2 \right) - m_3 \left(h_4 -h_3\right) &= 0 \\
 m_1 \left(s_1 - s_2 \right) - m_3 \left(s_4 - s_3 \right) &= -S_g 
@@ -518,19 +517,18 @@ m_1 \left(s_1 - s_2 \right) - m_3 \left(s_4 - s_3 \right) &= -S_g
 
 If the heat source degrades, at equal to the specifications of the inflow \#1, an increase in the entropy generation results evidently in an increase in the amount of entering fuel \#1 to maintain a constant production; thus, $m_3$, $(h_3, s_3)$, and $(h_4, s_4)$ are constant. Owing to the degradation, the new state of outflow \#2' is characterized by $(h_{2'}, s_{2'})$.   
 
-A differential analysis under these conditions leads to $(h_1,s_1)$ = constant:
+A differential analysis under the condition $(h_1,s_1)=Const.$ leads to:
 \begin{align}
 \left(h_1 - h_2\right) dm_1 = m_1 dh_2 \\
 dS_g + \left(s_1 - s_2\right) dm_1 =  m_1 ds_2 
 \end{align}
-
 If the dissipation temperature of flow \#2 is defined as a quotient:
 \[
 	T_{d_2}\equiv \frac{dh_2}{ds_2}>0
 \]
 subsequently \cref{eq:dt2} is also satisfied.
 
-According to the second law, $dS_g$ is always positive; therefore, more fuel must be used to obtain the same product, and $dm > 0$. Because $T_{d,2}$ is positive, the term $(h_1-h_2 )-T_{d,2} (s_1-s_2 )$ must be positive; in other words, $T_{d,2} (s_1-s_2)$ is always lower than $h_1-h_2$. Note also that in a low pressure steam turbine of a Rankine cycle, $T_{d,2}$ coincides with the condenser temperature which is fully logical. More examples could be found in \cite{Royo1995}.
+According to the second law, $dS_g$ is always positive; therefore, more fuel must be used to obtain the same product, and $dm > 0$. Because $T_{d,2}$ is positive, the term $(h_1-h_2 )-T_{d,2} (s_1-s_2 )$ must be positive; in other words, $T_{d,2}\,(s_1-s_2)$ is always lower than $h_1-h_2$. Note also that in a low pressure steam turbine of a Rankine cycle, $T_{d,2}$ coincides with the condenser temperature which is fully logical. More examples could be found in \cite{Royo1995}.
 
 \section{h-s Deterioration(s) Path(s) of an Energy System}
 Man-made energy systems transform the energy flows one into another flows with a purpose. Commonly, the name of a component describes its function: a boiler boils water, a condenser condenses, and a heat exchanger exchanges heat. The understanding of how nature behaves is the basis of the component design. The entering flow performs a purposive path through which its thermodynamic properties change progressively until the flow exits the component. This path is never strictly determined, either because of possible changes in the quantity/quality of the entering flow or because of changes in the behavior of the component itself. This path variation results in a change in the properties of the exiting flow with respect to its design conditions. There are as many new exit states as causes of change, which are called “malfunctions” and are classified into two categories: intrinsic and induced \cite{Valero2004c,Valero1999c,Torres1999}. The term “intrinsic” refers to the internal deterioration of the component; the term “induced” refers to its off-design conditions (not the optimal operating conditions). A good component design foresees most of these off-design conditions. Literature and some manufacturers provide governing equations and control parameters based on semi-empirical models of the machines.
@@ -641,9 +639,9 @@ Note that:
 \begin{equation}
     \left(\frac{\partial \Lgdr_1}{\partial \Lgdr_2}\right)_W = 1
 \end{equation}
-because both, $\Lgdr_1$ and $\Lgdr_2$ only depends on $m$, and:
+because both, $\Lgdr_1$ and $\Lgdr_2$ only depend on $m$, and:
 \begin{equation}
-    \left(\frac{\partial \Lgdr_1}{\partial W}\right)_{\Lgdr_2} = K_L,
+    \left(\frac{\partial \Lgdr_1}{\partial W}\right)_{\Lgdr_2} = k_L,
 \end{equation}
 in other words, it fulfills \cref{eq:dchar} of characteristic equations, thus demonstrating that \cref{eq:Lgdr} is a true characteristic equation.
 
