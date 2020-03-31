@@ -1,5 +1,5 @@
 % !TeX root = ./main.tex
-\documentclass[energies,article,accept,moreauthors,pdftex]{Definitions/mdpi} 
+\documentclass[energies,article,submit,moreauthors,pdftex]{Definitions/mdpi} 
 %----------
 % submit/accept
 %----------
@@ -43,17 +43,34 @@ $^{1}$ \quad CIRCE Institute, Universidad de Zaragoza, Zaragoza 50018, Spain}
 % Contact information of the corresponding author
 \corres{Correspondence: valero@unizar.es (A.V.); ctorresc@unizar.es (C.T.)}
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{Exergy cost analyses have become complementary to the analysis of energy systems. However, such analyses strongly depend on the expertise of the practitioner. This paper presents a mathematical theory that analyzes the decisions and pitfalls of conventional exergy costing based on the efficiencies of components. This theory is based on the definition of a linearized characteristic equation that represents the physical behavior of each component. The physical structure of the system described by its energy interrelationships is called “primal”, and its derivatives are the costs and consumptions. The obtained costing structure is the mathematical dual of its primal. The theory explains why the \emph{F} and \emph{P} costing propositions and any other suggestion may (or may not be) rational under a given disaggregation scheme. A result of the theory is a new thermodynamic function, called the \emph{relative free energy}, $\ell$, and a new parameter, $T_d$, called \emph{deterioration temperature} due to a component’s deterioration cause $r$, characterized by a h-s thermodynamic trajectory describing the effects on the exiting stream. In this paper, it is demonstrated that the pair $(\ell,T_d)$ is the Legendre transform of the pair $(h_r,s_r)$. The relative free energy function allows for an exact relationship between the amount of used resources and the increase in entropy generation caused by the deterioration path of the component. This function allows to obtain, for the first time, an appropriate characteristic equation for a turbine and a new definition of efficiency that does not depend on the environment temperature but on its deterioration temperature. Also, costing with the relative free energy instead of exergy may open a new path for more precise and straightforward assessments of component deteriorations.}
+\abstract{Exergy cost analyses have become complementary to the analysis of energy systems. However, such analyses strongly depend on the expertise of the practitioner. This paper presents a mathematical theory that analyzes the decisions and pitfalls of conventional exergy costing based on the efficiencies of components. This theory is based on the definition of a linearized characteristic equation that represents the physical behavior of each component. The physical structure of the system described by its energy interrelationships is called “primal”, and its derivatives are the costs and consumptions. The obtained costing structure is the mathematical dual of its primal. The theory explains why the \emph{F} and \emph{P} costing propositions and any other suggestion may (or may not be) rational under a given disaggregation scheme. A result of the theory is a new thermodynamic function, called the \emph{relative free energy}, and a new parameter called \emph{deterioration temperature} due to a component’s deterioration cause, characterized by a h-s thermodynamic trajectory describing the effects on the exiting stream. The relative free energy function allows for an exact relationship between the amount of used resources and the increase in entropy generation caused by the deterioration path of the component. This function allows to obtain, for the first time, an appropriate characteristic equation for a turbine and a new definition of efficiency that does not depend on the environment temperature but on its deterioration temperature. Also, costing with the relative free energy instead of exergy may open a new path for more precise and straightforward assessments of component deteriorations.}
 % Keywords
 \keyword{thermoeconomics; structural theory; characteristic equation; exergy cost theory; relative free energy; deterioration temperature; costing assessment; cost conservation equation; exergy dual/primal; thermoeconomic diagnosis.}
 %\setcounter{secnumdepth}{4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-Among its many interpretations \footnote{This paper expands upon a early keynote lecture at Nancy University, France, Nov. 2018 \cite{Nancy2018}. It revisits and extends the structural theory of thermoeconomics and the relative energy function previously published \cite{Valero1992a,Valero1992b}}, exergy $(Ex)$ is a physical measure (kWh) of distinction from commonness; the exergy is always associated with the chosen reference environment (commonness). Moreover, its analyses are always an alternative (and complementary) view of economic analyses. Currently, exergy is an appropriate property for allocating costs; it assesses how many resources are required to manufacture a product in concurrence with other co-products, by-products, and wastes. Hence, “costing” is an important application of exergy.
+The aim of this paper is challenging, since it questions all the concepts that have been traditionally used in thermoeconomics, also called exergoeconomics by other authors \cite{Tsatsaronis1985b}. There is a consensus among practitioners that exergy is the thermodynamic property that best distributes production costs among various streams, which then helps establishing the economic costs of the streams that interact in any energy system. However, the exergy calculation has the shortcoming that it depends on the reference environment employed, which in turn is an arbitrary selection of the user, and not a physical behavior of the system under analysis. If this is so, the concept of exergy efficiency, although more precise than the first law efficiency, still depends on the reference environment. This obviously applies also to its inverse, the unit exergy consumption, which is the precursor of the Theory of the Exergy Cost \cite{Valero1986a,Lozano1993}. Efficiency and costing are in effect, two sides of the same coin.
 
-The \emph{exergy cost} (kWh), \cite{Valero1986a}, otherwise known as \emph{cumulative exergy consumption} \cite{Morris1986,Szargut1988} or presently adopted as \emph{embodied exergy} according to some authors, measures the amount of exergy necessary to manufacture a product when the boundaries of the production plant, disaggregation level, and exergy efficiency of each component have been defined \cite{Valero1986a,Lozano1993}. Herein, the exergy cost of a stream with exergy $Ex$ is denoted with an asterisk, $Ex^*$, and its unit exergy cost is expressed as follows: $k^*\equiv Ex^*/Ex$.
+The exergy cost theory,ECT, is simple to understand and easy to implement computationally, and as a result its use has taken off since 1986 when it was first published. A year earlier, G. Tsatsaronis proposed to identify all the currents of an energy system in fuels and products and thereby generate the exergoeconomic costs. The ECT facilitated the task by proposing general Fuel-Product cost allocation rules that made the costing of energy systems a quasi-routine matter. But the problem of selecting a reference environment still remains and there might be consensus regarding which is the most suitable. However, convergent opinions are not mathematical proofs. Moreover, the word thermoeconomics adds an enormous responsibility to the researcher, as implicitly makes a fundamental connection between thermodynamics and economics.
+
+Historically many economists, especially the so-called ecological economists, have approached thermodynamics. The work of  \cite{MartinezAlier1987} extensively describes the early connections between economists and energeticists. Perhaps the most rigorous work was that from Georgescu-Roegen, \cite{GeorgescuRoegen1971}. He already discarded energy as a numeraire, pointing to entropy instead. He even went beyond by formulating the fourth law of thermodynamics, as the impossibility of completely recycling materials, drawing a parallel with the second law as the impossibility of completely recycling energy. From there on, ecological economists have tried to use entropy more as a metaphor than as a tool that quantifies decisions.
+
+On the other hand, thermodynamicists, mainly engineers, developed the concept of exergy. It is not the aim of this paper to describe the history, see \cite{Sciubba2007}, but to outline the conceptual roots of thermoeconomics. Exergy measures the theoretical ability to do work, therefore exergy efficiency will more precisely measure the performance of a machine. Yet the inverse of the efficiency describes the amount of resources consumed to obtain a product. And this is actually the definition of the physical cost, which in turn stands on the threshold of the economics.  This is so because if we value resources in monetary units and add other costs such equipment depreciation, maintenance and other expenses, we obtain the monetary costs of production not only of the final products, but of the intermediate products \cite{Tribus1962,ElSayed1970a, Tsatsaronis1985b}. This opened the door to comparing the costs of irreversibilities against the costs of operation and maintenance, which in turn naturally lead to propose improvements in the design of industrial processes. This was a paramount technological breakthrough. 
+
+Arguably, practicality and not mathematical precision is what is sought in exergoeconomic cost analysis because the cost is measured in monetary units. That said, the fluctuation of money is alien to the process designer, since it depends on external conditions that the practitioner cannot control. Consequently, exergoeconomics is a useful tool in the design of industrial processes, but it does not strive for the same precision associated to physical sciences. Its results depend both on the variability of money and on the measurement of irreversibilities with respect to the chosen reference state.
+
+The question is whether to go back to the concept of exergy cost, which only measures how the physical resources consumed by the production plant are distributed. In doing so, one will, at least, avoid currency fluctuations and will focus on the diagnosis of malfunctions that occur in all industrial processes \cite{Valero2004}. This opened a new technological path, because no energy system deteriorates for a single cause, but for several at the same time with different intensities and with chains of causation that induce new malfunctions and dysfunctions. Thermoeconomic diagnosis, using exergy costs, can be applied online and is very useful when applied to very complex plants. The disaggregation of any industrial energy system into subsystems allows to understand the process of formation of physical costs, predict failures and may keep the plant in optimal operating conditions. Yet the costs of malfunctions are still dependent on the reference state of the plant, which can be taken as fixed, or variable depending on external environmental conditions.
+
+In other words, exergy is useful as an industrial diagnosis tool, but equipment malfunction is essentially due to deterioration of the equipment itself, not to the definition of the reference environment. In short, exergetic diagnosis is not a precise and objective physical theory, but a very useful and agreed as practitioners’ tool. The question now is, is there an exergy-like type function that could provide diagnoses independent from the reference state? This would mean that environmental conditions would also influence the industrial system, but not through an arbitrary designer's selection, but through the environment's own natural interaction with the process.
+
+If this were possible, we could give a rigorous answer not only to the thermodynamics of energy systems, but to the economics itself. And all without leaving the Second Law. Linking the concept of cost with thermodynamics is to bridge the gap between Physics and Economics. It would be a crucial conceptual step forward sought by economists, something like the Holy Grail of economics. Indeed, while economists have come a long way in mathematical applications, they have never been able to link them to any physical law, only as metaphors. In a way, the conventional separation between hard and soft sciences would be closer to a scale of hardness than to the hard / soft dichotomy.
+
+This paper expands upon a early keynote lecture at Nancy University \cite{Valero2018}, and its objective is to come closer to a solution of this problem and investigate the concept of relative free energy, already proposed by Valero et al.,\cite{Valero1992b}, but with important precursors such as Baehr \cite{Baehr2005} and Alefeld \cite{Alefeld1988}. To maintain the completeness of the work, the Theory of Exergy Cost is briefly described first, followed by the Structural Theory, \cite{Valero1992a}. This leads to analyzing whether the decisions made by the process analyst are or are not supported by mathematical logic. These decisions are mainly the cost allocation rules, the level of aggregation, the fuel / product / residue definitions, and of course the exergy function and the reference state. This will allow discerning mathematical reasons from reasonable assumptions and go forward to a new thermodynamic function: the relative free energy function.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Exergy Cost Theory}
+The \emph{exergy cost} (kWh), otherwise known as \emph{cumulative exergy consumption} \cite{Morris1986,Szargut1988} or presently adopted as \emph{embodied exergy} according to some authors, measures the amount of exergy necessary to manufacture a product when the boundaries of the production plant, disaggregation level, and exergy efficiency of each component have been defined \cite{Valero1986a,Lozano1993}. Herein, the exergy cost of a stream with exergy $Ex$ is denoted with an asterisk, $Ex^*$, and its unit exergy cost is expressed as follows: $k^*\equiv Ex^*/Ex$.
 
 The process of costs allocation in manufacturing systems requires a set of rules for the case of bifurcated streams \cite{Lozano1993,Tsatsaronis2007}. The most important rules are as follows: 
 
@@ -95,12 +112,12 @@ The process of costs allocation in manufacturing systems requires a set of rules
 
 These rules link  the concepts of the unit exergy cost, $k^*$, of the streams with the efficiency definition of the components, $\eta \equiv 1/k$, one-to-one, where $k$ is named the unit exergy consumption of the component. This is the essential message of the \emph{theory of exergy cost}, which has been extensively used to assess the costs of many thermoeconomic/thermodynamic applications.
 
-However, a number of questions have arisen. First, based on its definition, the exergy cost depends on the plant disaggregation scheme. In other words, it cannot render a precise value because it depends on the analyst choice. For instance, a chemical plant produces ethylene and electricity, which are not produced in the same process but in the same plant; hence, either $P$ or $F$ rule applies. Therefore, the formation and type of the streams and how much and where the exergy has been consumed in the process must be analyzed. This detailed analysis provides a productive structure to which the rules can be applied in practical terms. A more detailed definition is more precise; however, there is the risk of not having measured data that corroborate the sensitivity of the obtained costs to variations in these data. There are major discrepancies among practitioners regarding the definition of productive structures and the disaggregation method of the processes.
+However, a number of questions have arisen. First, based on its definition, the exergy cost depends on the plant disaggregation scheme. In other words, it cannot render a precise value because it depends on the analyst choice. For instance, a chemical plant produces ethylene and electricity, which are not produced in the same process but in the same plant; hence, either $P$ or $F$ rule could be applied. Therefore, the formation and type of the streams and how much and where the exergy has been consumed in the process must be analyzed. This detailed analysis provides a productive structure to which the rules can be applied in practical terms. A more detailed definition is more precise; however, there is the risk of not having measured data that corroborate the sensitivity of the obtained costs to variations in these data. There are major discrepancies among practitioners regarding the definition of productive structures and the disaggregation method of the processes.
 
 Second, the definition of exergy efficiency also depends on the analyst. For example, in a counter current heat exchanger, a stream becomes cooled, and another becomes heated. Hence, does the exchanger heat, cool, or both, and which stream assumes the production cost? Furthermore, not all components aim to save exergy (productive components). Certain other components in a plant are responsible for mitigating (the exergy of) wastes. Hence, it must be determined how to allocate costs to the components that process residues.
 Third, exergy and its related cost depend on the chosen reference environment. However, the physical behavior of the plant does not depend on the analyst choice. Moreover, the right choice of the energy-like function for describing the plant might be in doubt: energy, exergy, (Gibbs) free energy, or any other generic function. 
 
-Moreover, are the costs average costs or marginal costs? The exergy of a stream measures its potential work with respect to a given environment, and the exergy cost measures how many irreversibilities have occurred in the manufacture of a stream or product plus its remaining exergy. The exergy cost can be considered an “exergy backpack” or “exergy footprint” of a stream or product, i.e., the past exergy synopsis (history) of the stream, whereas its exergy is the future energy potential of such a stream or its remaining capacity to produce work. Finally, can the exergy costs predict future degradations or only past irreversibilities?
+Moreover, are the costs average costs or marginal costs? The exergy of a stream measures its potential work with respect to a given environment, and the exergy cost measures how many irreversibilities have occurred in the manufacture of a stream or product plus its remaining exergy. The exergy cost can be considered an “exergy backpack” or “exergy footprint” of a stream or product, i.e., the past exergy synopsis (history) of the stream, whereas its exergy is the future energy potential of such a stream or its remaining capacity to produce work. Finally, can the exergy costs predict future degradations or describe only past irreversibilities??
 
 Despite these doubts, the analyst aims to obtain reasonable costs. Thus, it is necessary to disaggregate the system as far as common sense advises. However, if costs depend on the disaggregation scheme what scheme is reasonable? Second, the definition of efficiency for each component requires caution. Is it possible to find a more rational definition of efficiency? Third, choosing exergy is apparently better than other energy-like functions because it provides a proxy for the locally usable energy. Are there better energy like functions that predict the behaviour of components? Fourth, the selected reference level for exergy must be realistic. Is it possible to avoid the dependence of costs from the chosen reference environment? Finally, the average costs should be useful in predicting how many additional resources compensate for the small system perturbations. Is there a theory capable of predicting  exactly small system perturbations? While the current theory does not support these prudent conventions, practice does. The objective of this study is to revisit a general theory \cite{Valero1992a,Valero1992b}, for solving some of these questions and for providing a path for solving newly arising questions. 
 
@@ -161,7 +178,7 @@ the marginal unit cost of flows, could be determined by means of  \cref{eq:mcost
     \end{dcases}
     \label{eq:kchar}
 \end{equation}
-in other words, the unit cost of process $u$ outputs are lineally related with the unit cost of input streams by means of the technical coefficients. In case of the system's inputs, the marginal costs are known and made equal to one, which correspond to the external resources rule in the \emph{exergy cost theory}.
+in other words, the unit cost of process $u$ outputs are linearly related with the unit cost of input streams by means of the technical coefficients. In case of the system's inputs, the marginal costs are known and made equal to one, which correspond to the external resources rule in the \emph{exergy cost theory}.
 
 The application of this equation explains the previously mentioned Rules $F$ and $P$ as a particular case. For example, a turbine (\cref{fig:turbine}) with the following defined efficiency is considered: 
 \begin{figure}[ht]
@@ -392,7 +409,7 @@ where \vm{M},\vm{H} and \vm{Ex} are the mass, enthalpy and exergy vectors of the
 \section{Outcomes}
 The presented theory mitigates several important deficiencies of the conventional exergy costing theories. First, its results do not depend on a disaggregation scheme. For example, the system in \cref{fig:genplant} is aggregated into a single component \cref{fig:genplanta}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.9]{genplanta}
     \caption{Aggregated system of \cref{fig:genplant}}
@@ -411,7 +428,7 @@ meanwhile, its efficiency equation could be of the following type:
 
 The similarity is evident; however, the more the analyst aggregates, the more deviates the physical behavior of the system from the definition. Note that the reference environment of the exergy depends on the practitioner choice, whereas \cref{eq:echar} should be independent.
 
-The structural theory \cite{Valero1992a,Valero1993} has been largely ignored in the study of different alternate rules for costing allocations, such as in the allocation of the costs of wastes, by-products, or co-products. This might be due to the difficulties of determining the fundamental equations of components as in \cref{eq:gcf} or their linearized equations,~\cref{eq:echar}. Rather, the theory has been used to check the logics of rules $F$ and $P$.
+The structural theory, first presented in \cite{Valero1992a,Valero1993}, has been largely ignored in the study of different alternate rules for costing allocations, such as in the allocation of the costs of wastes, by-products, or co-products. This might be due to the difficulties of determining the fundamental equations of components as in \cref{eq:gcf} or their linearized equations,~\cref{eq:echar}. Rather, the theory has been used to check the logics of rules $F$ and $P$.
 
 Note that Odum's Emergy Analysis \cite{Odum1988,Brown1996} does not satisfy \eqref{eq:mbalcost} because it considers that when a biological system produces simultaneously two products, the same amount of solar energy is required for each product. This does not deny the idea of emergy; it simply states that this is not a regular cost.
 
@@ -420,7 +437,7 @@ In the same way, a non-linear theory does not satisfy \cref{eq:mbalcost} because
 dE_i=\sum_j \dpartial{i}{j}\, dE_j,
 \label{eq:dchar}
 \end{equation}
-rather than as \cref{eq:mbalcost}. However, \cref{eq:dchar} enables a generalization of the theory, For example, in \cite{Brown1996}, the costs are the Lagrange multipliers of an optimization of the plant.
+rather than as \cref{eq:mbalcost}. However, \cref{eq:dchar} enables a generalization of the theory, For example, in \cite{Valero1993}, the costs are the Lagrange multipliers of an optimization of the plant.
 
 The structural theory formally relates to the input-output theory \cite{Leontief1970}; however, \emph{the characteristic equation makes the difference because it deeply connects the thermodynamic behavior of an energy system to the stream costs such as in a transparent box}. Instead of the economic performance of highly aggregated economy sectors, their input–output flows are obtained outside the black boxes, which constitute each sector of the economy. In addition, the second law exergy analysis appears as a natural connection between physical behavior and cost, because it locates and accounts for irreversibilities occurring in a plant; thus, \emph{it relates the physical losses to the costs}. Note that “cost” is a concept that originates from economics, while “irreversibility” originates from thermodynamics. The structural theory can be considered a sought-after bridge between classical economics and physics. Thus, we consider the term “thermoeconomics” is more appropriate than alternatives such as exergoeconomics \cite{Tsatsaronis2007}. 
 
@@ -496,7 +513,7 @@ where $r$ is the deterioration path, as it shown is \cref{fig:dt1}.
 
 \Cref{eq:dt2} is the mathematical expression of the existing relationship between any local degradation and the increase in associated resources if the production of the component should remain constant.
 
-These equations and the function $\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were presented in \cite{Valero1992b}. Valero called it the \emph{relative free energy} (RFE), and $T_d$ the \emph{deterioration temperature} \cite{Royo1994,Royo1995}. The expression “relative free energy” originates from its similarity to the Gibbs free energy function. \Cref{eq:dt2} states that any deterioration process in an energy component has an associated $T_d$. This parameter possesses temperature dimensions even if it is not a measurable temperature; it can be calculated by measuring the quotient $dh_2/ds_2$ experienced by the output flow of the component.
+These equations and the function $\ell\equiv (h_1-h_2) - T_d (s_1 - s_2)$ were presented in \cite{Valero1992b}. Valero called it the \emph{relative free energy} \cite{Royo1994,Royo1995}, and $T_d$ the \emph{deterioration temperature} \footnote{In 1994, Prof. E Sciubba proposed to name it "dissipation" temperature. However the authors consider the word "deterioration" more precise, since that word always relates to a component rather than to a process.}. The expression "relative free energy" (RFE) originates from its similarity to the Gibbs free energy function. \Cref{eq:dt2} states that any deterioration process in an energy component has an associated $T_d$ in the exit stream  of suplying fuel. This parameter possesses temperature dimensions even if it is not a measurable temperature; it can be calculated by measuring the quotient $dh_2/ds_2$ experienced by the output stream of the component's fuel.
 
 The heat exchanger \cref{fig:dt2} experiences the same procedure. In that case, the enthalpy and entropy balances are written as follows: 
 \begin{align}
@@ -506,7 +523,7 @@ m_1 \left(s_1 - s_2 \right) - m_3 \left(s_4 - s_3 \right) &= -S_g
 
 If the heat source degrades, at equal to the specifications of the inflow \#1, an increase in the entropy generation results evidently in an increase in the amount of entering fuel \#1 to maintain a constant production; thus, $m_3$, $(h_3, s_3)$, and $(h_4, s_4)$ are constant. Owing to the degradation, the new state of outflow \#2' is characterized by $(h_{2'}, s_{2'})$.   
 
-\begin{figure}
+\begin{figure}[ht]
 	\begin{minipage}[c]{0.37\linewidth}
 		\centering
 		\includegraphics{heater}
@@ -537,7 +554,6 @@ According to the second law, $dS_g$ is always positive; therefore, more fuel mus
 Man-made energy systems transform the energy flows one into another flows with a purpose. Commonly, the name of a component describes its function: a boiler boils water, a condenser condenses, and a heat exchanger exchanges heat. The understanding of how nature behaves is the basis of the component design. The entering flow performs a purposive path through which its thermodynamic properties change progressively until the flow exits the component. This path is never strictly determined, either because of possible changes in the quantity/quality of the entering flow or because of changes in the behavior of the component itself. This path variation results in a change in the properties of the exiting flow with respect to its design conditions. There are as many new exit states as causes of change, which are called “malfunctions” and are classified into two categories: intrinsic and induced \cite{Valero2004c,Valero1999c,Torres1999}. The term “intrinsic” refers to the internal deterioration of the component; the term “induced” refers to its off-design conditions (not the optimal operating conditions). A good component design foresees most of these off-design conditions. Literature and some manufacturers provide governing equations and control parameters based on semi-empirical models of the machines.
 
 For a given deterioration cause $r$ of an energy component, either intrinsic or induced, a geometric path in the $h-s$ plane of the possible exit flow states can be identified. Let $h_{2'}=h_{2'}(s_{2'}, r)$ to be the function describing this dissipation path of the exiting flow, as in \cref{fig:dt1}, where:
-\newpage
 
 \begin{description}
 	\item[$1 \longrightarrow 2:$]  is the design path of the stream in the component.
@@ -567,7 +583,7 @@ or
 \label{eq:lgdr}
 \end{equation}
 
-\Cref{eq:lgdr} is the \emph{Legendre transform} of the deterioration path $h_{2'}=h_{2'}(s_{2'},r)$. In fact, pairs of $(\ell_{2'} , T_{d,2'})$ for each exit state, \#2', of the component provide the same information as pairs $(h_{2'},s_{2'}$). Because the relationship  $\ell_{2'} = \ell_{2'}(T_{d,2'})$ is mathematically equivalent to the relationship $h_{2'} = h_{2'} (s_{2'}, r)$, it can also be considered the description of the deterioration path. More in general, $h_r=h_r (s_r)$, is the deterioration function in the \emph{h-representation}; whereas $\ell_r = \ell_r(T_d,r)$ is the deterioration function in the $\ell$-representation. In other words, $\ell_r$ and $T_{d,r}$, are inseparable in a deterioration path, $r$, such as $h_r$ and $s_r$ do. Note also that $h$ and $s$ do not represent absolute values because they refer $h_0$ and $s_0$ values. Unless otherwise stated $h$ and $s$ represent $h-h_0$ and $s-s_0$.
+\Cref{eq:lgdr} is the \emph{Legendre transform} of the deterioration path $h_{2'}=h_{2'}(s_{2'},r)$. In fact, pairs of $(\ell_{2'} , T_{d,2'})$ for each exit state, \#2', of the component provide the same information as pairs $(h_{2'},s_{2'}$). Since the relationship  $\ell_{2'} = \ell_{2'}(T_{d,2'})$ is mathematically equivalent to the relationship $h_{2'} = h_{2'} (s_{2'}, r)$, it can also be considered the description of the deterioration path. More in general, $h_r=h_r (s_r)$, is the deterioration function in the \emph{h-representation}; whereas $\ell_r = \ell_r(T_d,r)$ is the deterioration function in the $\ell$-representation. In other words, $\ell_r$ and $T_{d,r}$, are inseparable in a deterioration path, $r$, such as $h_r$ and $s_r$ do. Note also that $h$ and $s$ do not represent absolute values because they refer $h_0$ and $s_0$ values. Unless otherwise stated $h$ and $s$ represent $h-h_0$ and $s-s_0$.
 
 According to the definition of the relative free exergy \cref{eq:lgdr}, expression \eqref{eq:dt2} could be written as:
 \begin{equation}
@@ -581,7 +597,7 @@ T_d=\left(\frac{dh}{ds}\right)_r
 \end{equation}      
 
 It can be interpreted as the entropic cost of the dissipation. The greater $T_d$, the lower is the relative free energy of the exiting flow.
-Well-known contributors to technical thermodynamics such as Baehr \cite{Baehr2005,Baehr1979} have defined the “friction work” or “loss work” for an expander as follows: 
+Well-known contributors to technical thermodynamics such as Baehr \cite{Baehr2005} have defined the “friction work” or “loss work” for an expander as follows: 
 \begin{equation}
 	dW_r=T_d\,dS_g
 \end{equation}
@@ -600,18 +616,18 @@ dF=T_0\,dS_g=\frac{T_0}{T_d}\,dW_r
 
 Another important antecedent was the work of Alefeld \cite{Alefeld1988}, who worked on heat pumps and refrigeration systems: he questioned the use of the reference ambient temperature $T_0$ instead of a variable temperature $T_x$ associated with the equipment. In particular, he proposed for the case of a condenser, that this temperature $T_x$ be equal to that of the condenser vacuum, $T_{vac}$. Alefeld was highly criticized by the community of exergy practitioners, because the holistic vision that exergy provides was lost in his proposal. This article is a recognition to his work because mathematical proofs are stronger than reasonable assumptions.
 
-The relative free energy function, $\ell$, represents the local free energy conditioned by the dissipation path, $r$. It is an intensive property, and its corresponding extensive property: 
+The relative free energy function, $\ell$, represents the local free energy conditioned by the deterioration path, $r$. It is an intensive property, and its corresponding extensive property: 
 \begin{equation}
 \Lgdr = m\,\ell
 \end{equation}                                                
-is the amount of energy of the exiting stream in a fuel or a product of the type $E_1-E_2$, which is not affected by the deterioration of the component. This is because when the exit flow changes its state owing to the deterioration, $h$ and $s$, vary by following the path $h_r = h_r (s_r)$. Consequently, the following expression is obtained:
+is the amount of energy of the exiting stream in a fuel of the type $E_1-E_2$, which is not affected by the deterioration of the component. This is because when the exit flow changes its state owing to the deterioration, $h$ and $s$, vary by following the path $h_r = h_r (s_r)$. Consequently, the following expression is obtained:
 \begin{equation}
 d\ell = dh_r - \left(\frac{dh}{ds}\right)_r\, ds_r = 0 \qquad  \text{or} \qquad \ell = \text{const}.
 \end{equation}
 
 In addition, the function $h_r = h_r(s_r)$ is neither a straight curve not has it a slope $T_0$. Therefore, $\ell$, exceptionally coincides with the specific exergy of the stream, and the exergy increase in the output stream in the turbine is: $ex_{2'}-ex_{2}=(h_{2'}-h_2)-T_0\,(s_{2'}-s_2)$.
 
-In the example of the turbine, suppose the conditions that $(h_1, s_1)$ and $W$ are constant, then applying differential analysis to the unit exergy consumption definition: $k\equiv F/P$, it follows:
+In the example of the turbine, $(h_1, s_1)$ and $W$ are constant, then applying differential analysis to the unit exergy consumption definition: $k\equiv F/P$, it follows:
 \begin{equation}
 dF=P\,dk
 \label{eq:dfk}
@@ -625,7 +641,7 @@ and applying \cref{eq:dt2g}, it follows:
 \left(\frac{dk}{dm}\right)_r = \frac{T_0}{T_d} \cdot \frac{\ell_1 - \ell_2}{W}
 \end{equation}
 
-This expression is quite important, because it relates the loss of efficiency in the turbine with the additional mass of fuel to compensate it at constant production. In other words, it relates the malfunction of the turbine with the need for more entering fuel. Also this expression opens the way of changing the paradigm of exergy by the relative free energy.
+This expression is quite important, because it relates the loss of exergy efficiency in the turbine with the additional mass of fuel to compensate it at constant production. In other words, it relates the malfunction of the turbine with the need for more entering fuel. Also this expression opens the way of changing the paradigm of exergy by the relative free energy.
 
 Therefore, a new definition of the efficiency (or its inverse specific consumption) of the turbine appears:
 \begin{equation}
@@ -653,12 +669,12 @@ in other words, any additional percentage of malfunction following a trajectory 
 
 Also note that exergy does not fulfill \cref{eq:klm}, because:
 \[
-	ex_1\,dm = ex_2\,dm + m\,dex_2 + W\,dk_L\qquad dex_2\neq0
+	ex_1\,dm = ex_2\,dm + m\,dex_2 + W\,dk\qquad dex_2\neq0
 \]
 
-\Cref{eq:Lgdr} is not a mere efficiency definition, as it is the unit exergy consumption definition $k\equiv F/P$, but corresponds to a physical description of the system turbine and what is more important, it does not depend on the reference environment temperature $T_0$, but on the behaviour of the turbine. the structural theory, as explained in this paper, together with the relative free energy function allows to obtain an interesting characteristic function of the behavior of thermodynamic systems. If under the Structural theory, the coefficients $k_{ij}$ are the precursors of costs $k_j^*$, should these costs be their “natural” costs? or perhaps they should be named “regular” costs?. In any case these costs are directly related to the  additional amount of resources needed to compensate the malfunction.
+\Cref{eq:Lgdr} is not a mere efficiency definition, as it is the unit exergy consumption definition $k\equiv F/P$, but corresponds to a physical description of the system turbine and what is more important, it does not depend on the reference environment temperature $T_0$, but on the behavior of the turbine. The structural theory, as explained in this paper, together with the relative free energy function allows to obtain an interesting characteristic function of the behavior of thermodynamic systems. If under the structural theory, the coefficients $k_{ij}$ are the precursors of costs $k_j^*$, should these costs be their “natural” costs? or perhaps they should be named “regular” costs?. In any case these costs are directly related to the  additional amount of resources needed to compensate the malfunction.
 
-The expression \cref{eq:dt2g} shows that the second law has not yet said the last word regarding the relationship between the thermodynamic quantity, quality, cost and irreversibility. In general, the reason of why $T_d$ instead of $T_0$, stems from the fact that the additional degraded energy not used in producing the product becomes part to the exiting streaming instead of going directly to the environment at $T_0$.  The value of $T_d$ depends on how great the additional irreversibility is created. Such interpretation of $T_d$, allows understand that, its lowest attainable value is $T_0$, while it has no superior limits.
+The expresion \eqref{eq:dt2g} shows that the second law has not yet said the last word regarding the relationship between the thermodynamic quantity, quality, cost and irreversibility. In general, the reason of why $T_d$ instead of $T_0$, stems from the fact that the additional degraded energy not used in producing the product becomes part to the exiting streaming instead of going directly to the environment at $T_0$.  The value of $T_d$ depends on how great the additional irreversibility is created. Such interpretation of $T_d$, allows understand that, its lowest attainable value is $T_0$, while it has no superior limits.
 
 In other words, the deterioration lowers the free energy of the exiting stream. As this deterioration always relates to some component, this is why we name this function the relative free energy. In the same way that the Gibbs free energy relates to some chemical reaction, the RFE relates to some component deterioration in a system.
 
@@ -675,11 +691,11 @@ and knows how the global system's resources is related with local resources, i.e
 one may have a new theory of energy system diagnosis. We will present this theory with due examples in a following paper, however, an early analysis was published in \cite{Royo1997}.
 
 \section{Conclusions}
-The definition of efficiency plays a fundamental role in the process of calculating average exergy costs. So efficiency and cost became closely linked. In such a way the \emph{theory of exergy cost} \cite{Valero1986a,Lozano1993} was extensively used to assess costs on many thermoeconomic/thermodynamic applications. However, the exergy cost depends on the plant disaggregation scheme. It is necessary to look after \emph{the cost formation process}, by searching how much exergy has been consumed in the processes and where they have consumed it. The result of this activity is a given productive structure. However, if exergy depends on a chosen reference state, exergy efficiencies and their closely related costs will depend on such selection. Notwithstanding, any deterioration that increases entropy generation results in an additional expense of resources used to produce the same product. Both, the entropy increase and the additional resources are measurable and free from analyst selections. Therefore, something fails in the conventional theory. 
+The definition of efficiency plays a fundamental role in the process of calculating average exergy costs. So efficiency and cost became closely linked. In such a way, the \emph{theory of exergy cost} \cite{Valero1986a,Lozano1993} was extensively used to assess costs on many thermoeconomic/thermodynamic applications. However, the exergy cost depends on the plant disaggregation scheme. It is necessary to look after \emph{the cost formation process}, by searching how much exergy has been consumed in the processes and where they have consumed it. The result of this activity is a given productive structure. However, if exergy depends on a chosen reference state, exergy efficiencies and their closely related costs will depend on such selection. Notwithstanding, any deterioration that increases entropy generation results in an additional expense of resources used to produce the same product. Both, the entropy increase and the additional resources are measurable and free from analyst selections. Therefore, something fails in the conventional theory. 
 
 The use of exergy instead of enthalpy or the Gibbs function for obtaining costs increase the overall, coherent and systematic view of a set of stream costs in a productive structure. To what extent one could use these costs to assess component malfunctions? In other words, can average costs be used as marginal costs?
 
-The exergy cost is the \emph{exergy backpack}, \emph{embodied exergy} or the \emph{exergy footprint} of a commodity; in fact, Szargut named it as “cumulative exergy consumption” i.e. its “past” characterization (history), while exergy is the potential energy of such a commodity, or its remaining capacity for doing something else. Can average costs predict future degradations or only past irreversibilities? 
+The exergy cost is the \emph{exergy backpack}, \emph{embodied exergy} or the \emph{exergy footprint} of a commodity; in fact, Szargut named it as “cumulative exergy consumption”,\cite{Szargut1988} i.e. its “past” characterization (history), while exergy is the potential energy of such a commodity, or its remaining capacity for doing something else. Can average costs predict future degradations or only past irreversibilities? 
 
 The purpose of Thermoeconomics is to obtain a coherent and significant set of costs in a given structure. That is because its applications are directed towards the optimization and diagnosis of productive structures. Therefore, the costs of internal streams are quite important to analyze the behavior of the system. Consequently, internal costs ought to be as sensitive as possible to system degradation. A theory that would provide exact costs would be the objective of thermoeconomic diagnosis. In fact, one can obtain the costs of final products --commodities--, without performing very detailed analyses. In other words, in no way Thermoeconomics, as it is already known, is far from being finished. Moreover, the analyst needs to look for the \emph{process of formation cost of wastes}, \cite{Torres2008}, not mentioned here even when some ideas developed here could be used to clarify it.
 
@@ -696,6 +712,7 @@ This paper presents a general theory of (linear) costing, demonstrating and answ
 	$\ell_2 = \ell_2(T_{d,2} , r)$. In other words, the pairs  $\ell_r$ and $T_{d,r}$, are so inseparable in a deterioration path, $r$, as the pairs $(h_r,s_r)$ do.
 	\item The general formula \eqref{eq:dt2g} applies for different flowing streams in energy systems under each particular deterioration path, $r_i$. A given component may have several deterioration paths, not only one. Therefore, the concept of component malfunction need be associated with that of deterioration paths.
 	\item A way for assessing appropriate characteristic equations of thermal systems as it was obtained here for the case of  turbines.
+	\item As the  component's deterioration  does not  depends on the analyst's decision on the chosen reference state, the deterioration temperature no longer  depends on  the chosen reference temperature.  Neither does the new definition of efficiency using the RFE. This fact does not isolate the plant from environmental conditions, but eliminates the arbitrary selection of any reference state. That idea clarifies the role of the environmental conditions onto the plant.
 \end{itemize}
 
 The Exergy Cost Theory provides reasonable costs. Will the relative free energy provide a set of natural (or perhaps named regular) costs? In fact the cost of a deterioration is directly related to the physical behavior of that deterioration. This way it also means that these costs are in fact marginal costs, since they incorporate the future malfunction behavior of the component.
@@ -713,83 +730,153 @@ This theory sketched here opens new fields of knowledge, since new questions app
 \conflictsofinterest{The authors declare no conflict of interest. } 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reftitle{References}
-\begin{thebibliography}{99}
+%\externalbibliography{yes}
+%\bibliography{mybibfile}
+\begin{thebibliography}{-------}
 	\providecommand{\natexlab}[1]{#1}
-	\bibitem{Nancy2018}
-	Valero, A.
-	\newblock The duality between exergy efficiencies and exergy costs. The structural theory and the relative free energy function.
-	\newblock Journées sur le thème de l'éxergie, Nancy. France Nov. 22-23, 2018. 
-	\newblock {\changeurlcolor{black}\url{https:/www.sfgp.asso.fr/journees-thematiques-exergies-22-23-novembre-2018} (accessed, Dec, 2019).}
 	
-	\bibitem[Valero and Lozano(1992)]{Valero1992a}
-	Valero, A.; Lozano, M.
-	\newblock A general theory of thermoeconomics: Part I. Structural Analysis.
-	\newblock  ECOS '92 International Symposium, 1992, pp. 137--145.
-	
-	\bibitem[Valero and Lozano(1992)]{Valero1992b}
-	Valero, A.; Lozano, M.
-	\newblock A general theory of thermoeconomics: Part II. The relative free energy function.
-	\newblock  ECOS '92 International Symposium,  1992, pp. 147--154.
+	\bibitem[Tsatsaronis and Winhold(1985)]{Tsatsaronis1985b}
+	Tsatsaronis, G.; Winhold, M.
+	\newblock Exergoeconomic analysis and evaluation of energy-conversion plants-I.
+	A new general methodology.
+	\newblock {\em Energy} {\bf 1985}, {\em 10},~69--80.
 	
 	\bibitem[Valero \em{et~al.}(1986)Valero, Lozano, and Muñoz]{Valero1986a}
 	Valero, A.; Lozano, M.; Muñoz, M.
 	\newblock A general theory of exergy saving. I. On the exergetic cost.
-	\newblock {\em Computer-aided engineering and energy systems: second law analysis and modelling} {\bf 1986}, {\em 3},~1--8.
+	\newblock {\em Computer-aided engineering and energy systems: second law
+		analysis and modelling} {\bf 1986}, {\em 3},~1--8.
+	
+	\bibitem[Lozano and Valero(1993)]{Lozano1993}
+	Lozano, M.A.; Valero, A.
+	\newblock Theory of the exergy Cost
+	\newblock  {\em Energy} {\bf 1993}, {\em 18},~939--960.
+	Vol.~30, pp. 312--320.
+	
+	\bibitem[Juan Martinez-Alier(1987)]{MartinezAlier1987}
+	Martinez-Alier, J.; Schlupmann, K.
+	\newblock {\em {E}cological {E}conomics: {E}nergy {E}nvironment and {S}ociety};
+	Basil Blackwell Ltd.,  1987.
+	
+	\bibitem[Georgecu-Roegen(1971)]{GeorgescuRoegen1971}
+	Georgecu-Roegen, V.
+	\newblock {\em The {E}ntropy {L}aw and the {E}conomic {P}rocess}; Harvard
+	University Press,  1971.
+	
+	\bibitem[Enrico~Sciubba(2007)]{Sciubba2007}
+	Sciubba,E.; Wall,G.
+	\newblock A brief commented history of exergy from the beginnings to 2004.
+	\newblock {\em International Journal of Thermodynamics} {\bf 2007}, {\em
+		10},~1--26.
+	
+	\bibitem[Tribus and Evans(1962)]{Tribus1962}
+	Tribus, M.; Evans, E.
+	\newblock A Contribution to the Theory of Thermoeconomics.
+	\newblock Technical Report~62, University of California, Los Angeles,  1962.
+	
+	\bibitem[El-Sayed and Evans(1970)]{ElSayed1970a}
+	El-Sayed, Y.M.; Evans, R.B.
+	\newblock Thermoeconomics and Design of Heat Systems.
+	\newblock {\em Journal of Engineering for Power} {\bf 1970}, {\em 92},~27--35.
+	\newblock
+	doi:{\changeurlcolor{black}\href{https://doi.org/https://doi.org/10.1115/1.3445296}{\detokenize{https://doi.org/10.1115/1.3445296}}}.
+	
+	\bibitem[Valero \em{et~al.}(2004)Valero, Correas, Lazzaretto, Rangel, Reini,
+	Taccani, Toffolo, Verda, and Zaleta]{Valero2004}
+	Valero, A.; Correas, L.; Lazzaretto, A.; Rangel, V.; Reini, M.; Taccani, R.;
+	Toffolo, A.; Verda, V.; Zaleta, A.
+	\newblock Thermoeconomic Philosophy Applied to Operating Analysis and Diagnosis
+	of Energy Utilty Systems.
+	\newblock {\em Int. J. Thermodynamics} {\bf 2004}, {\em 7},~33--39.
+	
+	\bibitem[Valero(2018)]{Valero2018}
+	Valero, A.
+	\newblock The duality between exergy efficiencies and exergy costs. {T}he
+	structural theory and the relative free energy function.
+	\newblock  Journées sur le thème de l'éxergie, Nancy. France Nov. 22-23,
+	2018.,  2018.
+	
+	\bibitem[Valero and Lozano(1992)]{Valero1992b}
+	Valero, A.; Lozano, M.
+	\newblock General theory of thermoeconomics: Part II. The relative free energy
+	function.
+	\newblock  ECOS '92 International Symposium,  1992, pp. 147--154.
+	
+	\bibitem[Baehr(2005)]{Baehr2005}
+	Baehr, H.D.
+	\newblock {\em Themodynamik}; Springer,  2005.
+	
+	\bibitem[Alefeld(1988)]{Alefeld1988}
+	Alefeld, G.
+	\newblock Problems with the exergy concept (or the missing {S}econd {L}aw).
+	\newblock {\em IEA Heat Pump Newsletter} {\bf 1988}, {\em 6},~19--23.
+	
+	\bibitem[Valero \em{et~al.}(1992)Valero, Torres, and Serra]{Valero1992a}
+	Valero, A.; Torres, C.; Serra, L.
+	\newblock General theory of thermoeconomics: Part I. Structural analysis.
+	\newblock  ECOS '92 International Symposium,  1992, pp. 137--145.
 	
 	\bibitem[Morris and Szargut(1986)]{Morris1986}
 	Morris, D.R.; Szargut, J.
-	\newblock Standard chemical exergy of some elements and compounds on the Earth planet.
+	\newblock Standard Chemical Exergy of Some Elements and Compounds on the Earth
+	Planet.
 	\newblock {\em Energy} {\bf 1986}, {\em 11},~733--755.
 	
 	\bibitem[Szargut \em{et~al.}(1988)Szargut, Morris, and Steward]{Szargut1988}
 	Szargut, J.; Morris, D.R.; Steward, F.
-	\newblock {\em Exergy analysis of thermal, chemical, and metallurgical processes}; Hemisphere: New York,  1988.
-
-	\bibitem[Lozano and Valero(1993)]{Lozano1993}
-	Lozano, M.A.; Valero, A.
-	\newblock Theory of the exergetic cost.
-	\newblock {\em Energy} {\bf 1993}, {\em 18},~939--960.
+	\newblock {\em Exergy analysis of Thermal, Chemical, and Metallurgical
+		Processes}; Hemisphere: New York,  1988.
 	
 	\bibitem[Tsatsaronis(2007)]{Tsatsaronis2007}
 	Tsatsaronis, G.
 	\newblock Definitions and nomenclature in exergy analysis and exergoeconomics.
 	\newblock {\em Energy} {\bf 2007}, {\em 32},~249--253.
+	\newblock ECOS 05. 18th International Conference on Efficiency, Cost,
+	Optimization, Simulation, and Environmental Impact of Energy Systems,
+	doi:{\changeurlcolor{black}\href{https://doi.org/https://doi.org/10.1016/j.energy.2006.07.002}{\detokenize{https://doi.org/10.1016/j.energy.2006.07.002}}}.
 	
 	\bibitem[Leontief(1970)]{Leontief1970}
 	Leontief, W.
-	\newblock Environmental repercussions and the economic structure: An input--output approach.
-	\newblock {\em Review of Economics and Statistics} {\bf 1970}, {\em 52},~262--271.
+	\newblock Environmental {R}epercussions and the {E}conomic {S}tructure: {A}n
+	{I}nput--{O}utput {A}pproach.
+	\newblock {\em Review of Economics and Statistics} {\bf 1970}, {\em
+		52},~262--271.
 	
 	\bibitem[Boyd and Vandenberghe(2004)]{Boyd2004}
 	Boyd, S.; Vandenberghe, L.
-	\newblock {\em Convex optimization}; Cambridge University Press,  2004.
+	\newblock {\em Convex {O}ptimization}; Cambridge University Press,  2004.
 	
 	\bibitem[Valero \em{et~al.}(1990)Valero, Carreras, Torres, and
 	Lozano]{Valero1990d}
 	Valero, A.; Carreras, A.; Torres, C.; Lozano, M.A.
-	\newblock On {C}ausality in {O}rganized {E}nergy {S}ystems (parts {I}, {II} and {III}).
+	\newblock On {C}ausality in {O}rganized {E}nergy {S}ystems (parts {I}, {II} and
+	{III}).
 	\newblock  A Future for Energy, FLOWERS 1990,  1990, pp. 387--420.
 	
 	\bibitem[Valero \em{et~al.}(1993)Valero, Serra, and Lozano]{Valero1993}
 	Valero, A.; Serra, L.; Lozano, M.
 	\newblock Structural theory of thermoeconomics.
-	\newblock  American Society of Mechanical Engineers, Advanced Energy Systems Division (Publication) AES; Richter, H.J., Ed. The American Society of Mechanical Engineers,  1993, Vol.~30, {\em H00874}, pp. 189--198.
+	\newblock  American Society of Mechanical Engineers, Advanced Energy Systems
+	Division (Publication) AES; Richter, H.J., Ed. The American Society of
+	Mechanical Enegineers,  1993, Vol.~30, {\em H00874}, pp. 189--198.
 	
 	\bibitem[Odum(1988)]{Odum1988}
 	Odum, H.
 	\newblock Self-organization, transformity, and information.
-	\newblock {\em Science} {\bf 1988}, {\em 242},~1132--1139.
-	\newblock doi:{\changeurlcolor{black}\url{10.1126/science.242.4882.1132}}.
+	\newblock {\em Science} {\bf 1988}, {\em 242},~1132--1139.\\
+	\newblock
+	doi:{\changeurlcolor{black}\href{https://doi.org/10.1126/science.242.4882.1132}{\detokenize{10.1126/science.242.4882.1132}}}.
 	
 	\bibitem[Brown and Herendeen(1996)]{Brown1996}
 	Brown, M.; Herendeen, R.
-	\newblock Embodied energy analysis and emergy analysis: A comparative view.
+	\newblock Embodied energy analysis and EMERGY analysis: A comparative view.
 	\newblock {\em Ecological Economics} {\bf 1996}, {\em 19},~219--235.
-	\newblock doi:{\changeurlcolor{black}\href{https://doi.org/10.1016/S0921-8009(96)00046-8}{\detokenize{10.1016/S0921-8009(96)00046-8}}}.
-		
-	\bibitem[Royo(1994)]{Royo1994}
+	\newblock
+	doi:{\changeurlcolor{black}\href{https://doi.org/10.1016/S0921-8009(96)00046-8}{\detokenize{10.1016/S0921-8009(96)00046-8}}}.
+	
+	\bibitem[Javier(1994)]{Royo1994}
 	Royo, J.
-	\newblock Las ecuaciones caracteristicas de los sistemas térmicos. {L}a
+	\newblock Las ecuaciones caracteristicas de los sistemas tÃ©rmicos. {L}a
 	energía libre relativa.
 	\newblock PhD thesis, Universidad de Zaragoza. Spain,  1994.
 	
@@ -797,7 +884,8 @@ This theory sketched here opens new fields of knowledge, since new questions app
 	Royo, J.; Valero, A.
 	\newblock Towards a unified description of the energy behavior of
 	thermomechanical systems.
-	\newblock  Analisys and Improvement of Energy Systems; Krane, R.J., Ed.,  1995, Vol.~35, pp. 127--134.
+	\newblock  Analisys and Improvement of Energy Systems; Krane, R.J., Ed.,  1995,
+	Vol.~35, pp. 127--134.
 	
 	\bibitem[Valero \em{et~al.}(2004)Valero, Correas, Zaleta, Lazzaretto, Verda,
 	Reini, and Rangel]{Valero2004c}
@@ -809,53 +897,47 @@ This theory sketched here opens new fields of knowledge, since new questions app
 	
 	\bibitem[Valero \em{et~al.}(1999)Valero, Torres, and Lerch]{Valero1999c}
 	Valero, A.; Torres, C.; Lerch, F.
-	\newblock Structural theory and thermoeconomic diagnosis. Part III: Intrinsic and induced malfunctions.
+	\newblock Structural Theory and Thermoeconomic Diagnosis. Part III: Intrinsic
+	and Induced Malfunctions.
 	\newblock  Proceedings of the ECOS'99,  1999.
 	
 	\bibitem[Torres \em{et~al.}(1999)Torres, Valero, Serra, and Royo]{Torres1999}
 	Torres, C.; Valero, A.; Serra, A.; Royo, J.
-	\newblock Structural theory and thermoeconomic diagnosis. Part I: On
-	malfunction and dysfunction analysis.
-	\newblock  Proceedings of the ECOS'99; The American Society of Mechanical Enegineers: Tokyo, Japan,  1999; pp. 368--373.
+	\newblock Structural Theory and Thermoeconomic Diagnosis. Part I: On
+	Malfunction and Dysfunction Analysis.
+	\newblock  Proceedings of the ECOS'99; The American Society of Mechanical
+	Enegineers: Tokyo, Japan,  1999; pp. 368--373.
 	
 	\bibitem[Callen(1985)]{Callen1985}
 	Callen, H.B.
-	\newblock {\em Thermodynamics and an introduction to thermostatistics}, second ed.; Wiley,  1985.
+	\newblock {\em Thermodynamics and an {I}ntroduction to {T}hermostatistics},
+	second ed.; Wiley,  1985.
 	
 	\bibitem[Alberty(2001)]{Alberty2001}
 	Alberty, R.
-	\newblock Use of Legendre transforms in chemical thermodynamics: (IUPAC technical report).
+	\newblock Use of legendre transforms in chemical thermodynamics: (IUPAC
+	Technical Report).
 	\newblock {\em Pure and Applied Chemistry} {\bf 2001}, {\em 73},~1349--1380.
 	\newblock
 	doi:{\changeurlcolor{black}\href{https://doi.org/10.1351/pac200173081349}{\detokenize{10.1351/pac200173081349}}}.
 	
-	\bibitem[Baehr(2005)]{Baehr2005}
-	Baehr, H.D.
-	\newblock {\em Themodynamik}; Springer, 2005.
-	
-	\bibitem[Baehr(1979)]{Baehr1979}
-	Baehr, H.D.
-	\newblock {\em Tratado moderno de termodinámica. {T}eoría y aplicaciones técnicas}; Montesó,  1979.
-	
-	\bibitem[Alefeld(1988)]{Alefeld1988}
-	Alefeld, G.
-	\newblock Problems with the exergy concept (or the missing {S}econd {L}aw).
-	\newblock {\em IEA Heat Pump Newsletter} {\bf 1988}, {\em 6},~19--23.
-	
-	\bibitem[Royo \em{et~al.}(1997)]{Royo1997}
+	\bibitem[Royo \em{et~al.}(1997)Royo, Valero, and Zaleta]{Royo1997}
 	Royo, J.; Valero, A.; Zaleta, A.
-	\newblock The dissipation temperature: A tool for the analysis of malfunctions in thermomechanical systems.
+	\newblock The dissipation temperature: A tool for the analysis of malfunctions
+	in thermomechanical systems.
 	\newblock {\em Energy Conversion and Management} {\bf 1997}, {\em
-    38},~1557--1566.
-    
-    \bibitem[Torres \em{et~al.}(2008)]{Torres2008}
-    Torres, C.; Valero, A.; Rangel, V.; Zaleta, A.
-    \newblock On the cost formation process of the residues.
-    \newblock {\em Energy} {\bf 2008}, {\em 33},~144--152.
+		38},~1557--1566.
+	
+	\bibitem[Torres \em{et~al.}(2008)Torres, Valero, Rangel, and
+	Zaleta]{Torres2008}
+	Torres, C.; Valero, A.; Rangel, V.; Zaleta, A.
+	\newblock On the cost formation process of the residues.
+	\newblock {\em Energy} {\bf 2008}, {\em 33},~144--152.
 	
 	\bibitem[Valero(2000)]{Naredo2000}
 	Valero, A.
 	\newblock El marco termodínamico para iluminar la sociedad actual. In {\em
-		Economía, ecología y sostenibilidad en la sociedad actual}; Naredo, J.M.; Parra, F., Eds.; Siglo XXI de España Editores,  2000; pp. 69--75.	
+		Economía, ecología y sostenibilidad en la sociedad actual}; Naredo, J.M.;
+	Parra, F., Eds.; Siglo XXI de España Editores,  2000; pp. 69--75.	
 \end{thebibliography}
 \end{document}
