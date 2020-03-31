@@ -564,16 +564,7 @@ For a given deterioration cause $r$ of an energy component, either intrinsic or 
 The function $h_{2'}=h_{2'} (s_{2'}, r)$ ) can be regarded as the mathematical description of the effects on the exiting flow caused by the component deterioration cause $r$. This function always exists for a given differential malfunction interval. Moreover, under actual machine conditions, this function is a composite curve of the different paths caused by the concurrent deteriorations acting simultaneously on the component \cite{Valero2004c}. The next section focuses on this function.
 
 \section{The Legendre Transform of a Deterioration Path}
-For each deterioration cause, $r$, the existence of a function $h = h(s)$ of the exiting flow can be assumed, which can be described in the $h-s$ plane with the conventional point geometry or Plücker line geometry for strictly convex functions as a convolution of the tangents of the original curve. This technique is named the \emph{Legendre transform} of the function $h = h(s)$ and is widely used in classical thermodynamics \cite{Callen1985,Alberty2001}.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.78]{rfe.pdf}
-	\caption{Geometric representation of the relative free energy and deterioration temperature}
-	\label{fig:rfe}
-\end{figure}
-
-\Cref{fig:rfe} shows that the intercept on the $h-axis$ of the tangent line is $\ell$ with slope $T_d$:
+For each deterioration cause, $r$, the existence of a function $h = h(s)$ of the exiting flow can be assumed, which can be described in the $h-s$ plane with the conventional point geometry or Plücker line geometry for strictly convex functions as a convolution of the tangents of the original curve. This technique is named the \emph{Legendre transform} of the function $h = h(s)$ and is widely used in classical thermodynamics \cite{Callen1985,Alberty2001}. As it is shown in \cref{fig:rfe}, the intersection of the tangent line of the deterioration path $r$  with the $h$- axis is $\ell$ and its slope is $T_d$:
 \[
 T_d=\frac{h-\ell}{s}
 \]
@@ -582,6 +573,13 @@ or
 \ell=h-T_d\,s \qquad \text{i.e.} \qquad \ell=\ell(T_d)
 \label{eq:lgdr}
 \end{equation}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.78]{rfe.pdf}
+	\caption{Geometric representation of the relative free energy and deterioration temperature}
+	\label{fig:rfe}
+\end{figure}
 
 \Cref{eq:lgdr} is the \emph{Legendre transform} of the deterioration path $h_{2'}=h_{2'}(s_{2'},r)$. In fact, pairs of $(\ell_{2'} , T_{d,2'})$ for each exit state, \#2', of the component provide the same information as pairs $(h_{2'},s_{2'}$). Since the relationship  $\ell_{2'} = \ell_{2'}(T_{d,2'})$ is mathematically equivalent to the relationship $h_{2'} = h_{2'} (s_{2'}, r)$, it can also be considered the description of the deterioration path. More in general, $h_r=h_r (s_r)$, is the deterioration function in the \emph{h-representation}; whereas $\ell_r = \ell_r(T_d,r)$ is the deterioration function in the $\ell$-representation. In other words, $\ell_r$ and $T_{d,r}$, are inseparable in a deterioration path, $r$, such as $h_r$ and $s_r$ do. Note also that $h$ and $s$ do not represent absolute values because they refer $h_0$ and $s_0$ values. Unless otherwise stated $h$ and $s$ represent $h-h_0$ and $s-s_0$.
 
