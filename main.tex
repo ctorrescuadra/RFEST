@@ -72,42 +72,54 @@ This paper expands upon a early keynote lecture at Nancy University \cite{Valero
 \section{The Exergy Cost Theory}
 The \emph{exergy cost} (kWh), otherwise known as \emph{cumulative exergy consumption} \cite{Morris1986,Szargut1988} or presently adopted as \emph{embodied exergy} according to some authors, measures the amount of exergy necessary to manufacture a product when the boundaries of the production plant, disaggregation level, and exergy efficiency of each component have been defined \cite{Valero1986a,Lozano1993}. Herein, the exergy cost of a stream with exergy $Ex$ is denoted with an asterisk, $Ex^*$, and its unit exergy cost is expressed as follows: $k^*\equiv Ex^*/Ex$.
 
-The process of costs allocation in manufacturing systems requires a set of rules for the case of bifurcated streams \cite{Lozano1993,Tsatsaronis2007}. The most important rules are as follows:
+\noindent The process of costs allocation in productive systems requires a set of rules  \cite{Lozano1993,Tsatsaronis2007}:
+\begin{description}[font=\normalfont\itshape]
+	\item[Resources Rule:] The exergy cost of the flows entering the system should be provided as input data. In absence of further information, this is assumed equal to their exergy.
+	\item[Cost Balance Rule:] For each process of the system, the exergy cost of entering flows is equal to the exergy cost of the output flows.
+	\item[Wastes Rule:]  The production cost must be allocated to what one wants to produce. In absence of further information, the cost of losses or wastes, is assumed to be equal to zero.
+	\item[By-products rule:] Also knows as \emph{Rule F}. If one or more outlet flows are considered as by-products (i.e. not the product of the component), then their unit exergy cost is equal to the average unit exergy cost of the inlet flows.
+	\item[Co-products rule:] Also knows as \emph{Rule P}. If two or more product outlet flows are considered as the main products of the component, then they have the same the unit exergy cost. It means, their exergy costs are proportional to their exergies. 
+\end{description}
 
-\emph{Rule P:} the costs per unit of exergy of the co-products are equal; “co-products” means two or more products with the same quality produced in the component.
+As resume of these rules, the exergy cost is conservative property, and the production cost must be allocated to what one wants to produce, therefore, when a process has several outputs, we need to apply the rules $F$ and $P$, see \cref{fig:RulesFP}, depending on the productive purpose of the processes. 
 
-\emph{Rule F}: the costs per unit of exergy of non-exhausted and entering resources are equal.
+Let's see an example of application of these rules. Suppose first, a medium pressure steam turbine as shown in \cref{fig:turbine}, where the entering steam $F_1$ has an exergy of 30 MW, it delivers a shaft work of $P=10$ MW and the exit steam $F_2$ still has 19 MW of exergy. Then, the exergy expended to produce $P$ is $F_1-F_2=11$ MW, and its efficiency $\eta=P/(F_1-F_2)=0.909$.
+
+If the turbine's objective is producing power, the full cost of that production should be charged to the shaft work. Accordingly, the rule $F$ means that the unit exergy cost of the flowing steam remains unaltered. Suppose that the amount of exergy expended to produce the entering steam is 2.5 times greater than its exergy content, i.e. $k_1^*=2.5$ MW/MW. Then the rule $F$ states that the unit exergy cost of the exit steam, $F_2$, is that of the entering steam, $F_1$, or $k_2^*=k_1^*=2.5$. Consequently, the amount of exergy needed to produce the shaft work will increase in $k_3^*=k_1^*/\eta=2.75$ MW/MW.
+
+To explain \emph{Rule P}, consider an electric generator and distributor as in \cref{fig:distributor} It delivers two currents, 9 MW of disposable energy and 0.5 MW for ancillary systems, at the expenditure of 10 MW of shaft work. Its efficiency becomes  $\eta= (P_1 + P_2)/F=0.95$. As both exit streams are simultaneously required, the cost of its production must be allocated proportionally to both currents. Therefore, the \emph{Rule P} states that the exergy cost per unit of exergy must be equal for the two currents. If the unit exergy cost of the shaft work was $k_1^*=2.75$ MW/MW, then the  unit costs of the exit electric streams become $k_2^*=k_3^*=k_1^*/\eta=2.895$ MW/MW. The reader may find many examples of application of these rules to a wide-ranging class of thermal systems in \cite{Moran1996}.
+
 \begin{center}
-  \begin{minipage}[c]{0.50\linewidth}
-    \includegraphics{reglaP.pdf}
-  \end{minipage}
-  \begin{minipage}[c]{0.45\linewidth}
-    \centering
-    \textbf{Rule P}
-    \begin{equation*}
-        \eta=\frac{P_1+P_2}{F}
-    \end{equation*}
-    \begin{equation*}
-        k_{P,1}^*=k_{P,2}^*
-    \end{equation*}
-  \end{minipage}
+	\begin{minipage}[c]{0.50\linewidth}
+		\includegraphics{reglaF.pdf}
+	\end{minipage}
+	\begin{minipage}[c]{0.45\linewidth}
+		\centering
+		\textbf{Rule F}
+		\begin{equation*}
+		\eta=\frac{P}{F_1-F_2}
+		\end{equation*}
+		\begin{equation*}
+		k_{F,1}^*=k_{F_2}^*
+		\end{equation*}
+	\end{minipage}
+	\captionof{figure}{Cost allocation rules P and F in stream bifurcation}
+	\label{fig:RulesFP}
 \end{center}
 \begin{center}
-  \begin{minipage}[c]{0.50\linewidth}
-    \includegraphics{reglaF.pdf}
-  \end{minipage}
-  \begin{minipage}[c]{0.45\linewidth}
-    \centering
-    \textbf{Rule F}
-    \begin{equation*}
-        \eta=\frac{P}{F_1-F_2}
-    \end{equation*}
-    \begin{equation*}
-        k_{F,1}^*=k_{F_2}^*
-    \end{equation*}
-  \end{minipage}
-  \captionof{figure}{Cost allocation rules P and F in stream bifurcation}
-  \label{fig:RulesFP}
+	\begin{minipage}[c]{0.50\linewidth}
+		\includegraphics{reglaP.pdf}
+	\end{minipage}
+	\begin{minipage}[c]{0.45\linewidth}
+		\centering
+		\textbf{Rule P}
+		\begin{equation*}
+		\eta=\frac{P_1+P_2}{F}
+		\end{equation*}
+		\begin{equation*}
+		k_{P,1}^*=k_{P,2}^*
+		\end{equation*}
+	\end{minipage}
 \end{center}
 
 These rules link  the concepts of the unit exergy cost, $k^*$, of the streams with the efficiency definition of the components, $\eta \equiv 1/k$, one-to-one, where $k$ is named the unit exergy consumption of the component. This is the essential message of the \emph{theory of exergy cost}, which has been extensively used to assess the costs of many thermoeconomic/thermodynamic applications.
@@ -117,7 +129,7 @@ However, a number of questions have arisen. First, based on its definition, the 
 Second, the definition of exergy efficiency also depends on the analyst. For example, in a counter current heat exchanger, a stream becomes cooled, and another becomes heated. Hence, does the exchanger heat, cool, or both, and which stream assumes the production cost? Furthermore, not all components aim to save exergy (productive components). Certain other components in a plant are responsible for mitigating (the exergy of) wastes. Hence, it must be determined how to allocate costs to the components that process residues.
 Third, exergy and its related cost depend on the chosen reference environment. However, the physical behavior of the plant does not depend on the analyst choice. Moreover, the right choice of the energy-like function for describing the plant might be in doubt: energy, exergy, (Gibbs) free energy, or any other generic function.
 
-Moreover, are the costs average costs or marginal costs? The exergy of a stream measures its potential work with respect to a given environment, and the exergy cost measures how many irreversibilities have occurred in the manufacture of a stream or product plus its remaining exergy. The exergy cost can be considered an “exergy backpack” or “exergy footprint” of a stream or product, i.e., the past exergy synopsis (history) of the stream, whereas its exergy is the future energy potential of such a stream or its remaining capacity to produce work. Finally, can the exergy costs predict future degradations or describe only past irreversibilities??
+Moreover, are the costs average costs or marginal costs? The exergy of a stream measures its potential work with respect to a given environment, and the exergy cost measures how many irreversibilities have occurred in the manufacture of a stream or product plus its remaining exergy. The exergy cost can be considered an “exergy backpack” or “exergy footprint” of a stream or product, i.e., the past exergy synopsis (history) of the stream, whereas its exergy is the future energy potential of such a stream or its remaining capacity to produce work. Finally, can the exergy costs predict future degradations or describe only past irreversibilities?
 
 Despite these doubts, the analyst aims to obtain reasonable costs. Thus, it is necessary to disaggregate the system as far as common sense advises. However, if costs depend on the disaggregation scheme what scheme is reasonable? Second, the definition of efficiency for each component requires caution. Is it possible to find a more rational definition of efficiency? Third, choosing exergy is apparently better than other energy-like functions because it provides a proxy for the locally usable energy. Are there better energy like functions that predict the behaviour of components? Fourth, the selected reference level for exergy must be realistic. Is it possible to avoid the dependence of costs from the chosen reference environment? Finally, the average costs should be useful in predicting how many additional resources compensate for the small system perturbations. Is there a theory capable of predicting  exactly small system perturbations? While the current theory does not support these prudent conventions, practice does. The objective of this study is to revisit a general theory \cite{Valero1992a,Valero1992b}, for solving some of these questions and for providing a path for solving newly arising questions.
 
@@ -809,7 +821,7 @@ This theory sketched here opens new fields of knowledge, since new questions app
 	\newblock Problems with the exergy concept (or the missing {S}econd {L}aw).
 	\newblock {\em IEA Heat Pump Newsletter} {\bf 1988}, {\em 6},~19--23.
 
-	\bibitem[Valero \em{et~al.}(1992)Valero, Torres, and Serra]{Valero1992a}
+	\bibitem[Valero \em{et~al.}(1992)]{Valero1992a}
 	Valero, A.; Torres, C.; Serra, L.
 	\newblock General theory of thermoeconomics: Part I. Structural analysis.
 	\newblock  ECOS '92 International Symposium,  1992, pp. 137--145.
@@ -823,7 +835,7 @@ This theory sketched here opens new fields of knowledge, since new questions app
 	\bibitem[Szargut \em{et~al.}(1988)Szargut, Morris, and Steward]{Szargut1988}
 	Szargut, J.; Morris, D.R.; Steward, F.
 	\newblock {\em Exergy analysis of Thermal, Chemical, and Metallurgical
-		Processes}; Hemisphere: New York,  1988.
+		Processes}; Hemisphere: New York, 1988.
 
 	\bibitem[Tsatsaronis(2007)]{Tsatsaronis2007}
 	Tsatsaronis, G.
@@ -832,7 +844,11 @@ This theory sketched here opens new fields of knowledge, since new questions app
 	\newblock ECOS 05. 18th International Conference on Efficiency, Cost,
 	Optimization, Simulation, and Environmental Impact of Energy Systems,
 	doi:{\changeurlcolor{black}\href{https://doi.org/https://doi.org/10.1016/j.energy.2006.07.002}{\detokenize{https://doi.org/10.1016/j.energy.2006.07.002}}}.
-
+	
+	\bibitem[Bejan \em{et~al.}(1996)]{Moran1996} 
+	Bejan, A.; Tsatsaronis, G.; Moran, M.J.
+	\newblock{\em Thermal Design and Optimization};
+	John Wiley \& Sons, New York, 1996.
 	\bibitem[Leontief(1970)]{Leontief1970}
 	Leontief, W.
 	\newblock Environmental {R}epercussions and the {E}conomic {S}tructure: {A}n
